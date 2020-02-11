@@ -18,25 +18,36 @@ class PPE:
 		print('Sent \'On\' signal to each subsystem. ')
 
 class Subsystem:
+	DEFAULT_POWER_STATUS = False
+	DEFAULT_POWER_USAGE = 0.0
+	DEFAULT_STABILITY = False
+
 	'''
 	Parent class for all subsystems. Defines default values for each subsystem.
 	'''
+	def __init__(self,name)
+		self.powered_on = DEFAULT_POWER_STATUS
+		self.power_usage = DEFAULT_POWER_USAGE
+		self.is_stable = DEFAULT_STABILITY
+		self.name = name
 
-	powered_on = False
-	power_usage = 0.0
-	is_stable = False
-
-
-	def reboot():
+	def reboot(self): #yield everything
 		print('Received reboot signal')
+		self.powered_on = DEFAULT_POWER_STATUS
+		print('{} powered off...'.format(self.name))
+		self.power_usage = DEFAULT_POWER_USAGE
+		self.is_stable = DEFAULT_STABILITY
+		self.powerOn()
+		print('{} powered on. Reconfiguring...'.format(self.name))
 
-	def powerOn():
-		print('Make it turn on')
 
-	def getReport(subsystem):
+	def powerOn(self):
+		self.powered_on = not(DEFAULT_POWER_STATUS)
+
+	def getReport(self, subsystem):
 		print('Get report from subsystem')
 
-	def sendReport(subsystem):
+	def sendReport(self, subsystem):
 		print('Send report to subsystem')
 
 
@@ -54,10 +65,10 @@ class Communications(Subsystem):
 
 	def getSignalStrength():
 
-	def getReport(subsystem):
-
-
 	#setters
+
+	def powerOn(self):
+		#overloaded method for comm specific
 
 	def setPowerDraw(power_level):
 
@@ -93,6 +104,9 @@ class Power(Subsystem):
 
 	#setters
 
+	def powerOn(self):
+		#overloaded method for power specific
+
 	def togglePowerSaving():
 		print("Changing power saving from {} to {}.".format(eco_mode,not(eco_mode)))
 		return not(eco_mode)
@@ -111,6 +125,9 @@ class GNC(Subsystem):
 
 	def verifyManeuver():
 		print('wat')
+
+	def powerOn(self):
+		#overloaded method for gnc specific
 
 	def impulseApplied():
 		print('wat')
@@ -134,6 +151,9 @@ class Propulsion(Subsystem):
 	
 	#setters
 
+	def powerOn(self):
+		#overloaded method for prop specific
+
 	def toggleCathode():
 		print("Changing cathode power from {} to {}.".format(cathode_power,not(cathode_power)))
 		return not(eco_mode)
@@ -156,3 +176,8 @@ class Thruster:
 
 	def getBurnTime():
 		return burnTime
+
+	#setters
+
+	def powerOn(self):
+		#overloaded method for thruster specific
