@@ -8,6 +8,8 @@ class PPE:
 	def __init__(self, env):
 		self.env = env
 
+	distance_from_earth = 10E5 #km
+
 	def alert():
 		print('Alert alert')
 
@@ -17,7 +19,7 @@ class PPE:
 	def systemsOn():
 		print('Sent \'On\' signal to each subsystem. ')
 
-class Subsystem:
+class Subsystem(PPE):
 	DEFAULT_POWER_STATUS = False
 	DEFAULT_POWER_USAGE = 0.0
 	DEFAULT_STABILITY = False
@@ -58,6 +60,9 @@ class Communications(Subsystem):
 		self.connected = False
 		self.encrypted = False
 
+		#defining link budget properties
+		self.
+
 
 	#getters
 
@@ -65,9 +70,12 @@ class Communications(Subsystem):
 
 	def getSignalStrength():
 
+		link_budget = 0
+
 	#setters
 
 	def powerOn(self):
+
 		#overloaded method for comm specific
 
 	def setPowerDraw(power_level):
