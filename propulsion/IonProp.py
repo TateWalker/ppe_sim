@@ -43,7 +43,7 @@ class IonProp:
 
 # setters
 
-    def MainPropOn(self):
+    def powerOn(self):
         self.powerOn = True
         print('\nIon propultion on')
         self.power = 12.5

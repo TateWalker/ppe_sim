@@ -9,11 +9,16 @@ class GNC:
         self.thrustersOn = np.empy([16]) # 16 thrusters needed   placeholder until we figure out exactly how many thrusters
         self.thrustMag = 5 # N   placeholder
         self.angDisp = np.empty([3])
+        self.power_usage = 0
 
 
 
 
 # setters
+
+    def powerOn():
+        self.powerOn = True
+
     def watchAttitude(self):
         for i in range(len(pos_error)):
             if self.pos_error[i] > 0.087266: #rad (5 deg)
