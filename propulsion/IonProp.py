@@ -1,147 +1,96 @@
-import numpy as np
-import math
-import cmath
-import matplotlib.pyplot as plt
-import pandas as pd
+# processes: main thrust, check altitude, kg ionized.
 
-# inputs
-print('Fuel Types:\n HELIUM = 0\n NEON = 1\n ARGON = 2\n KRYPTON = 3\n XENON = 4\n')
-FuelType = 0# int(input('Please enter fuel type:\n'))
-DeltaVel = 10000# int(input('Please enter your desired delta velocity in m/s\n'))
+import random
+import pandas as pd
+import simpy
+from numpy import log
+
+RandomSeed = 16
+theSeed = random.seed(RandomSeed)
 
 # constants
 q = 1.60217663E-19  # charge constant in coulombs
 n = 6.0221409E+23  # avocado's numba
-OpPow = 12.5 # kW
-OpVolt = 300  # volts
 cou = 6.241509074E+18  # 1 coulomb
 massPro = 1.6726219E-27  # mass of a proton
 
 # fuel data
-data = pd.read_csv (r'/Users/kendallmares/Downloads/FuelType.csv')
-df = pd.DataFrame(data, columns=['Name', 'FIE', 'Cost/gram', 'Molar Mass', 'Density', 'MeltingPt', 'cHeat'])
-
+data = pd.read_csv (r'/Users/kendallmares/Downloads/XenonData.csv')
+df = pd.DataFrame(data, columns=['FIE', 'Molar Mass', 'Density', 'MeltingPt', 'cHeat'])
 
 FIE = df['FIE'].values.tolist()  # kJ/mol
-cost = df['Cost/gram'].values.tolist()  # $/g
 MolMass = df['Molar Mass'].values.tolist()  # g
 rho = df['Density'].values.tolist()  # g/L
 meltPt = df['MeltingPt'].values.tolist()  # celsius
 cHeat = df['cHeat'].values.tolist()  # J/(g*K)
 
 
-# def ion(FuelType, DeltaVel):
 
-# intrinsic properties
-massKg = (MolMass[FuelType]/n) * 0.001  # kg
-molIonz = OpPow/FIE[FuelType] # mol/s
-MassIonz = molIonz * MolMass[FuelType] * 0.001  # kg/s
+class IonProp:
 
-# desired values
-VelOut = pow((2*OpVolt*q)/massKg, 0.5)  # m/s
-massInit = 7500  # initial mass of PPE in kg
-massFuel = -massInit * (1 - math.exp(DeltaVel/VelOut)) * math.exp(-DeltaVel/VelOut)  # kg
-thrust = MolMass[FuelType] * massPro * VelOut * ((OpPow * 1000) / OpVolt) * cou  # Newtons
-TotCost = cost[FuelType] * massFuel * 1000  # total cost (where mass is in kg)
-
-
-volume = (massFuel * 1000) / rho[FuelType] # L
-joulToCool = massFuel * cHeat[FuelType] * 1000 * (700 - meltPt[FuelType])  # in joules. 700C is assumed to be the operating temperature
+    def __init__(self):
+        self.powerOn = False
+        self.main_prop_burn_time = 0.0 # s
+        self.MassFlow = 0.0 # kg/s
+        self.massKg = 0.0 # kg
+        self.power = 0.0 # kW
+        self.volts = 0.0 # volts
+        self.DeltaVel = 0.0 # m/s
+        self.thrust = 0.0 # N
+        self.power_usage = 0.0
+        self.SetPowerDraw = 40 # change later
 
 
-if FuelType != 4:
-    massKgXe = (MolMass[1] / n) * 0.001
-    molIonzXe = OpPow / FIE[1]  # mol/s
-    MassIonzXe = molIonzXe * MolMass[1] * 0.001  # kg/s
+# setters
 
-    # desired values
-    VelOutXe = pow((2 * OpVolt * q) / massKgXe, 0.5)  # m/s
-    massInitXe = 7500  # initial mass of PPE in kg
-    massFuelXe = -massInitXe * (1 - math.exp(DeltaVel / VelOutXe)) * math.exp(-DeltaVel / VelOutXe)  # kg
-    thrustXe = MolMass[1] * massPro * VelOutXe * ((OpPow * 1000) / OpVolt) * cou  # Newtons
-    TotCostXe = cost[1] * massFuelXe * 1000  # total cost (where mass is in kg)
+    def powerOn(self):
+        self.powerOn = True
+        print('\nIon propultion on')
+        self.power = 12.5
+        self.volts = 300
+        self.setPowerDraw()
+        self.kg_ionized(simpy.Environment)
+        print('\nPreparing to fire...')
+        self.FireMainProp()
 
-
-    volumeXe = (massFuelXe * 1000) / rho[1]  # L
-    joulToCoolXe = massFuelXe * cHeat[1] * 1000 * (700 - meltPt[4])
-
-    # Final ratios & comparison
-   # massRat = round((massFuel/massFuelXe) * 100, 2)
-   # costRat = round((TotCost/TotCostXe) * 100, 2)
-   # thrustRat = round((thrust/thrustXe) * 100, 2)
-   # volRat = round((volume/volumeXe) * 100, 2)
-   # joulRat = round((joulToCool/joulToCoolXe) * 100, 2)
+    def setPowerDraw(self):
+        self.power_usage = self.power
 
 
+    def kg_ionized(self, env):
+        # intrinsic properties
+        self.massKg = (MolMass / n) * 0.001  # kg
+        molIonz = self.power / FIE  # mol/s
+        MassIonz = molIonz * MolMass * 0.001  # kg/s
+        IonizProb = env.timeout(random.randint(0.40,0.60))
+        self.MassFlow = MassIonz*IonizProb  # kg/s
+        print('Kg Ionized: {}'.format(self.massKg))
+        print('Mass flow rate: {}'.format(self.MassFlow))
 
 
-  #  print('Heres how your fuel compares to Xenon:\nYou used', massRat, '% of the mass\nYou used', costRat, '% of the cost\nYou used', thrustRat, '% of the thrust\nYou used', volRat, '% of the volume')
-
-else:
-    print('Here are your outputs:\nMass of Fuel:', massFuel, 'kg\nTotal cost:', TotCost, 'Dollars\nThurst:', thrust, 'N\nVolume:', volume, 'L')
-
-
-######### for plotting purposes #########
-Xemass = 2841.558641
-XeVout = 20998.60545
-Xecost = 3409870.37
-Xethrust = 1.199218295
-XeVol = 485653.5021
-Xejoul = 364470814.1
-
-massRat2 = round((massFuel / Xemass) * 100, 2)
-costRat2 = round((TotCost / Xecost) * 100, 2)
-thrustRat2 = round((thrust / Xethrust) * 100, 2)
-volRat2 = round((volume / XeVol) * 100, 2)
-joulRat2 = round((joulToCool / Xejoul) * 100, 2)
-
-# Final ratios & comparison
-massRat = round((massFuelXe / Xemass) * 100, 2)
-costRat = round((TotCostXe / Xecost) * 100, 2)
-thrustRat = round((thrustXe / Xethrust) * 100, 2)
-volRat = round((volumeXe / XeVol) * 100, 2)
-joulRat = round((joulToCoolXe / Xejoul) * 100, 2)
-
-labels = ['Mass (kg)', 'Cost ($,2018)', 'Thrust (N)', 'Volume (L)', 'Energy to Cool (J)']
-fuelTest = [massRat2, costRat2, thrustRat2, volRat2, joulRat2]
-fuel2 = [massRat, costRat, thrustRat, volRat, joulRat]
-
-x = np.arange(len(labels))  # the label locations
-width = 0.35  # the width of the bars
-
-fig, ax = plt.subplots()
-rects1 = ax.bar(x - width/2, fuelTest, width, label='Helium')
-rects2 = ax.bar(x + width/2, fuel2, width, label='Neon')
-
-# Add some text for labels, title and custom x-axis tick labels, etc.
-ax.set_ylabel('Percentage')
-ax.set_title('Helium and Neon Efficiency Evaluation')
-ax.set_xticks(x)
-ax.set_xticklabels(labels)
-ax.legend()
-
-
-def autolabel(rects):
-    """Attach a text label above each bar in *rects*, displaying its height."""
-    for rect in rects:
-        height = rect.get_height()
-        ax.annotate('{}'.format(height),
-                    xy=(rect.get_x() + rect.get_width() / 2, height),
-                    xytext=(0, 3),  # 3 points vertical offset
-                    textcoords="offset points",
-                    ha='center', va='bottom')
-
-
-autolabel(rects1)
-autolabel(rects2)
-
-fig.tight_layout()
-
-plt.show()
+    def FireMainProp(self): # use massflow or kg_ionizd here?
+        while self.powerOn:
+            VelOut = pow((2 * self.volts * q) / self.massKg, 0.5) # m/s
+            massInit = 7500  # initial mass of PPE in kg
+            self.DeltaVel = VelOut*log(massInit/(massInit - self.MassFlow)) # is my notation correct here?    units: m/s
+            self.thrust = MolMass * massPro * VelOut * ((self.power * 1000) / self.volts) * cou  # Newtons  we may not need this value
+            if not self.powerOn:
+                 break
+        print('Delta V: {}'.format(self.DeltaVel))
+        print('Thrust: {}'.format(self.thrust))
 
 
 
+# getters
+    def getReport(self):
+        print('\n------------Ion Propulsion Report------------\n')
+        print('We firing boyz? {}'.format(self.powerOn))
+        print('Power draw: {}'.format(self.power))
+        self.kg_ionized(simpy.Environment)
+        self.FireMainProp()
+        print('\n---------------------------------------------\n')
 
 
-
-
+#env = simpy.Environment()
+#go = IonProp(env)
+#env.run(until=500)

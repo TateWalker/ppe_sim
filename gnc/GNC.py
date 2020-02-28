@@ -31,9 +31,15 @@ class GNC:
         self.current_position([1, 3])
         self.thrusterPosition([16, 3])
         self.thrusterDirection([16, 3])
+        self.angDisp = np.empty([3])
+        self.power_usage = 0
 
 
 # setters
+
+    def powerOn(self):
+        self.powerOn = True
+
     def watchAttitude(self):
         for i in range(len(pos_error)):
             if self.pos_error[i] > 0.087266: #rad (5 deg) this is a placeholder
