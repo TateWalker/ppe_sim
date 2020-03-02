@@ -1,5 +1,8 @@
-data = pd.read_csv (r'/Users/kendallmares/ppe_sim/gnc/ppe_mass_prop.csv')
-df = pd.DataFrame(data, columns=['Mass', 'CoMX', 'CoMY', 'CoMZ', 'Ixx', 'Iyy', 'Izz', 'Ixy', 'Ixz', 'Iyz'])
+import pandas
+import numpy as np
+
+data = pandas.read_csv(r'/Users/kendallmares/ppe_sim/gnc/ppe_mass_prop.csv')
+df = pandas.DataFrame(data, columns=['Mass', 'CoMX', 'CoMY', 'CoMZ', 'Ixx', 'Iyy', 'Izz', 'Ixy', 'Ixz', 'Iyz'])
 
 
 ppe_mass = df['Mass'].values
@@ -15,7 +18,7 @@ Iyz = df['Iyz'].values
 
 InertiaMat = numpy.array([[df['Ixx'].values, df['Ixy'].values, df['Ixz'].values], [df['Ixy'].values, df['Iyy'].values, df['Iyz'].values], [df['Ixz'].values, df['Iyz'].values, df['Izz'].values]])
 
-
+print(InertiaMat)
 
 class GNC:
 
