@@ -18,11 +18,11 @@ massPro = 1.6726219E-27  # mass of a proton
 data = pd.read_csv ('propulsion/XenonData.csv')
 df = pd.DataFrame(data, columns=['FIE', 'Molar Mass', 'Density', 'MeltingPt', 'cHeat'])
 
-FIE = df['FIE'].values.tolist()  # kJ/mol
-MolMass = df['Molar Mass'].values.tolist()  # g
-rho = df['Density'].values.tolist()  # g/L
-meltPt = df['MeltingPt'].values.tolist()  # celsius
-cHeat = df['cHeat'].values.tolist()  # J/(g*K)
+FIE = df['FIE'].values  # kJ/mol
+MolMass = df['Molar Mass'].values  # g
+rho = df['Density'].values  # g/L
+meltPt = df['MeltingPt'].values  # celsius
+cHeat = df['cHeat'].values  # J/(g*K)
 
 
 
