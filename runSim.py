@@ -14,9 +14,9 @@ def bootSequence():
 
 	power.powerOn()
 	prop.powerOn()
-	comms.powerOn()
+	comms.powerOn(10E5)
 	gnc.powerOn()
-
+	
 	return comms,gnc,power,prop
 
 def runReports(subsystems):
@@ -29,9 +29,8 @@ def runReports(subsystems):
 def main():
 
 	comms,gnc,power,prop = bootSequence()
-	subsytems = [com,gnc,power,prop]
-	runReports()
-	_
+	subsystems = [comms,gnc,power,prop]
+	runReports(subsystems)
 	powerDraws = {
 		'Communications':comms.power_usage,
 		'GNC':gnc.power_usage,
@@ -39,14 +38,10 @@ def main():
 		'Propulsion':prop.power_usage
 		}
 
+		
 
 
-	while True:
 
-		distance = 10E5
-		comms = Communications()
-		comms.powerOn(distance)
-		comms.getReport()
 
 if __name__ == '__main__':
 	main()

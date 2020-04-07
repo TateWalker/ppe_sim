@@ -15,7 +15,7 @@ cou = 6.241509074E+18  # 1 coulomb
 massPro = 1.6726219E-27  # mass of a proton
 
 # fuel data
-data = pd.read_csv (r'/Users/kendallmares/Downloads/XenonData.csv')
+data = pd.read_csv ('propulsion/XenonData.csv')
 df = pd.DataFrame(data, columns=['FIE', 'Molar Mass', 'Density', 'MeltingPt', 'cHeat'])
 
 FIE = df['FIE'].values.tolist()  # kJ/mol
@@ -29,7 +29,7 @@ cHeat = df['cHeat'].values.tolist()  # J/(g*K)
 class IonProp:
 
     def __init__(self):
-        self.powerOn = False
+        self.powered_on = False
         self.main_prop_burn_time = 0.0 # s
         self.MassFlow = 0.0 # kg/s
         self.massKg = 0.0 # kg
@@ -44,8 +44,8 @@ class IonProp:
 # setters
 
     def powerOn(self):
-        self.powerOn = True
-        print('\nIon propultion on')
+        self.powered_on = True
+        print('\nIon propulsion on')
         self.power = 12.5
         self.volts = 300
         self.setPowerDraw()

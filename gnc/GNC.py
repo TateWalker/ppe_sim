@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import random
+<<<<<<< HEAD
 
 
 
@@ -8,6 +9,10 @@ data = pd.read_csv (r'/Users/kendallmares/ppe_sim/gnc/ppe_mass_prop.csv')
 df = pd.DataFrame(data, columns=['Mass', 'CoMX', 'CoMY', 'CoMZ', 'Ixx', 'Iyy', 'Izz', 'Ixy', 'Ixz', 'Iyz'])
 
 thrusters = pd.read_csv(r'/Users/kendallmares/ppe_sim/gnc/PPE_thruster_table_pythonformat.csv')
+=======
+import os
+thrusters = pd.read_csv('GNC/PPE_thruster_table_pythonformat.csv')
+>>>>>>> 7bb2fbb7683f4b12ccb0d7e3853575d15da7b7a6
 th = pd.DataFrame(thrusters, columns=['Xpos', 'Ypos', 'Zpos', 'Xdir', 'Ydir', 'Zdir', 'ThrustMag'])
 
 ppe_mass = df['Mass']
@@ -34,7 +39,7 @@ th_mag = th['ThrustMag'].values
 class GNC:
 
     def __init__(self):
-        self.power_on = False
+        self.powered_on = False
         self.burn_time = 0
         self.thrustersOn = np.empty([32])
         self.thrustMag = th_mag # N
@@ -88,7 +93,7 @@ class GNC:
             self.rand_perb = random.uniform(-rand_omega_p, rand_omega_p)
 
     def powerOn(self):
-        self.power_on = True
+        self.powered_on = True
         self.power_usage =+ 800 # joules # could also get a rough power value from the amount of torque generated
 
 
