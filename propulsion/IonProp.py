@@ -71,11 +71,11 @@ class IonProp:
     def FireMainProp(self): # use massflow or kg_ionizd here?
         while self.powerOn:
             VelOut = pow((2 * self.volts * q) / self.massKg, 0.5) # m/s
-            massInit = 7500  # initial mass of PPE in kg
+            massInit = 5945  # initial mass of PPE in kg
             self.DeltaVel = VelOut*log(massInit/(massInit - self.MassFlow)) # is my notation correct here?    units: m/s
             self.thrust = MolMass * massPro * VelOut * ((self.power * 1000) / self.volts) * cou  # Newtons  we may not need this value
             if not self.powerOn:
-                 break
+                 return
         print('Delta V: {}'.format(self.DeltaVel))
         print('Thrust: {}'.format(self.thrust))
 
