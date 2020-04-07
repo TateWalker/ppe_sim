@@ -75,7 +75,7 @@ class IonProp:
             self.DeltaVel = VelOut*log(massInit/(massInit - self.MassFlow)) # is my notation correct here?    units: m/s
             self.thrust = MolMass * massPro * VelOut * ((self.power * 1000) / self.volts) * cou  # Newtons  we may not need this value
             if not self.powerOn:
-                 return
+                 break
         print('Delta V: {}'.format(self.DeltaVel))
         print('Thrust: {}'.format(self.thrust))
 
