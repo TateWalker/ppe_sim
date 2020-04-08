@@ -1,3 +1,5 @@
+import pylink
+
 class Communications():
 
 	def __init__(self):
@@ -7,7 +9,6 @@ class Communications():
 		self.signal_strength_forward = 0.0 #Mbps
 		self.signal_strength_return = 0.0 #Mbps
 		self.connected = False
-		self.encrypted = False
 		self.f_stable = False
 		self.r_stable = False
 
@@ -19,12 +20,6 @@ class Communications():
 	def getSignalStrength(self):
 		print('Forward signal strength = {} Mbps'.format(self.signal_strength_forward))
 		print('Return signal strength = {} Mbps'.format(self.signal_strength_return))
-	
-	def isEncrypted(self):
-		if self.encrypted:
-			print('Communications are being encrypted.')
-		else:
-			print('Communications are not being encrypted.')
 
 	def getReport(self):
 		print('\n-------Communications-------\n')
@@ -57,7 +52,7 @@ class Communications():
 		self.power_usage = power
 	
 	def establish_link(self, distance):
-		self.signal_strength_forward = 50 #mbps
+		self.signal_strength_forward = get_link(1) #mbps
 		self.signal_strength_return = 100 #mbps
 
 	def measureStability(self):

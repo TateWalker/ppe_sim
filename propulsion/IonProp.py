@@ -49,7 +49,7 @@ class IonProp:
         self.power = 12.5
         self.volts = 300
         self.setPowerDraw()
-        self.kg_ionized(simpy.Environment)
+        self.kg_ionized()
         print('\nPreparing to fire...')
         self.FireMainProp()
 
