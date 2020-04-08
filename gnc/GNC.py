@@ -182,9 +182,9 @@ class GNC:
                 print('Pitching in the positive direction at {} rad/s'.format(0.0017453 * len(self.pos_pitch)))
             if self.thrustersOn[self.neg_pitch[i]] == 1:
                 print('Pitching in the negative direction at {} rad/s'.format(0.0017453 * len(self.neg_pitch)))
-            if self.thrustersOn[self.pos_yaw[i]] == 1:
+            if self.thrustersOn[self.pos_yaw[i-1]] == 1:
                 print('Yawing in the positive direction at {} rad/s'.format(0.0017453 * len(self.pos_yaw)))
-            if self.thrustersOn[self.neg_yaw[i]] == 1:
+            if self.thrustersOn[self.neg_yaw[i-1]] == 1:
                 print('Yawing in the negative direction at {} rad/s'.format(0.0017453 * len(self.neg_yaw)))
         for i in range(len(self.omega_vec)):
             print('Total Angular velocity: {}'.format(self.omega_vec[i]))
