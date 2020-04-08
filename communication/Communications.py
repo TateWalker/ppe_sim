@@ -17,7 +17,7 @@ class Communications():
 	def getMessage(self): #read from queue
 		print('Got message')
 
-	def getSignalStrength(self):
+	def getSignalStrength(self, distance):
 		print('Forward signal strength = {} Mbps'.format(self.signal_strength_forward))
 		print('Return signal strength = {} Mbps'.format(self.signal_strength_return))
 
@@ -25,11 +25,10 @@ class Communications():
 		print('\n-------Communications-------\n')
 		print('Powered on: {}'.format(self.powered_on))
 		print('Power usage: {}W'.format(self.power_usage))
-		self.getSignalStrength()
+		self.getSignalStrength(100)
 		print('Stable connection: {}'.format(self.is_stable))
 		if not(self.is_stable):
 			self.measureStability()
-		print('Encrypted connection: {}'.format(self.encrypted))
 		print('Connected: {}'.format(self.connected))
 		print('\n----------------------------\n')
 
@@ -41,8 +40,7 @@ class Communications():
 		print('\nCommunications powered on')
 		self.setPowerDraw(100.0)
 		print('Establishing link...')
-		self.establish_link(distance)
-		self.getSignalStrength()
+		self.getSignalStrength(100)
 		self.measureStability()
 		if self.is_stable:
 			self.connected = True
@@ -51,10 +49,6 @@ class Communications():
 	def setPowerDraw(self, power):
 		self.power_usage = power
 	
-	def establish_link(self, distance):
-		self.signal_strength_forward = get_link(1) #mbps
-		self.signal_strength_return = 100 #mbps
-
 	def measureStability(self):
 		if self.signal_strength_forward < 30:
 			print('Forward signal unstable')
@@ -75,8 +69,3 @@ class Communications():
 	def sendMessage(self): #send to nowhere (NASA)
 		print('Sent message, no response :/')
 	
-	def encryptData(self):
-		self.encrypted = True
-		print('Encrypted shit')
-
-		return encrypted

@@ -166,7 +166,7 @@ class GNC:
     def CheckSaturation(self):
         print('CMG saturation at {} percent capacity'.format((np.linalg.norm(self.lin_mom_vec)/self.mom_capacity)*100))
 
-    def GncReport(self):
+    def getReport(self):
         print('\n------------GNC Report------------\n')
         print('CMG saturation at {} percent capacity'.format((np.linalg.norm(self.lin_mom_vec)/self.mom_capacity)*100))
         print('Total power usage is {} kW'.format(self.power_usage/1000))
