@@ -2,11 +2,7 @@
 
 import random
 import pandas as pd
-import simpy
 from numpy import log
-
-RandomSeed = 16
-theSeed = random.seed(RandomSeed)
 
 # constants
 q = 1.60217663E-19  # charge constant in coulombs
@@ -57,12 +53,12 @@ class IonProp:
         self.power_usage = self.power
 
 
-    def kg_ionized(self, env):
+    def kg_ionized(self):
         # intrinsic properties
         self.massKg = (MolMass / n) * 0.001  # kg
         molIonz = self.power / FIE  # mol/s
         MassIonz = molIonz * MolMass * 0.001  # kg/s
-        IonizProb = env.timeout(random.randint(0.40,0.60))
+        IonizProb = random.uniform(0.40,0.60)
         self.MassFlow = MassIonz*IonizProb  # kg/s
         print('Kg Ionized: {}'.format(self.massKg))
         print('Mass flow rate: {}'.format(self.MassFlow))
@@ -86,11 +82,7 @@ class IonProp:
         print('\n------------Ion Propulsion Report------------\n')
         print('We firing boyz? {}'.format(self.powerOn))
         print('Power draw: {}'.format(self.power))
-        self.kg_ionized(simpy.Environment)
+        self.kg_ionized()
         self.FireMainProp()
         print('\n---------------------------------------------\n')
 
-
-#env = simpy.Environment()
-#go = IonProp(env)
-#env.run(until=500)
