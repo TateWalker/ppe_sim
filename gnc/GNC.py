@@ -71,7 +71,7 @@ class GNC:
         G = 6.67428E-11
         mass_moon = 7.34767309E+22
         r_p = 3233000
-        r_a = 65000000
+        r_a = 6511
         F_G_p = (G * mass_moon * self.mass_ship) / (r_p ** 2)
         F_G_a = (G * mass_moon * self.mass_ship) / (r_a ** 2)
         min_torque_a = ((0.05 * F_G_a) + F_G_a) * 1  # 1m is assumed min moment arm with a 5% increase in gravity gradient
@@ -92,63 +92,57 @@ class GNC:
 
     def powerOn(self):
         self.power_on = True
-        self.power_usage =+ 800 # joules # could also get a rough power value from the amount of torque generated
+        self.power_usage = 800 # joules # could also get a rough power value from the amount of torque generated
 
 
     def DesatOMM(self):
         alpha = (self.thrustMag * self.CoM_to_thruster) / np.linalg.norm(self.MomDiag)# this is the ang acc imposed by each thruster. for our purposes, alpha = omega
 
         ### positive roll maneuver ###
-        if self.omega_vec[0] < 4 * self.base_slew_rate: # yeah this is kinda arbitrary
+        while self.omega_vec[0] < 4 * self.base_slew_rate: # yeah this is kinda arbitrary
             self.omega_vec[0] = self.omega_vec[0] + (alpha * len(self.pos_roll)) # in rad, based off 0.1 deg/s, also arbitrary
             for i in range(len(self.pos_roll)):
                 self.thrustersOn[self.pos_roll[i]-1] = 1 # minus one to fix index (there is no "zero" thruster)
-        else:
             for k in range(len(self.pos_roll)):
                 self.thrustersOn[self.pos_roll[k]-1] = 0
 
         ### negative roll maneuver ###
-        if self.omega_vec[0] > 4 * self.base_slew_rate: # yeah this is kinda arbitrary
+        while self.omega_vec[0] > 4 * self.base_slew_rate: # yeah this is kinda arbitrary
             self.omega_vec[0] = self.omega_vec[0] - (alpha * len(self.neg_roll)) # in rad, based off 0.1 deg/s, also arbitrary
             for i in range(len(self.neg_roll)):
                 self.thrustersOn[self.neg_roll[i]-1] = 1 # minus one to fix index (there is no "zero" thruster)
-        else:
             for k in range(len(self.neg_roll)):
                 self.thrustersOn[self.neg_roll[k]-1] = 0
 
         ### positive pitch maneuver ###
-        if self.omega_vec[1] < 4 * self.base_slew_rate: # yeah this is kinda arbitrary
+        while self.omega_vec[1] < 4 * self.base_slew_rate: # yeah this is kinda arbitrary
             self.omega_vec[1] = self.omega_vec[1] + (alpha * len(self.pos_pitch)) # in rad, based off 0.1 deg/s, also arbitrary
             for i in range(len(self.pos_pitch)):
                 self.thrustersOn[self.pos_pitch[i]-1] = 1 # minus one to fix index (there is no "zero" thruster)
-        else:
             for k in range(len(self.pos_pitch)):
                 self.thrustersOn[self.pos_pitch[k]-1] = 0
 
         ### negative pitch maneuver ###
-        if self.omega_vec[1] > 4 * self.base_slew_rate:  # yeah this is kinda arbitrary
+        while self.omega_vec[1] > 4 * self.base_slew_rate:  # yeah this is kinda arbitrary
             self.omega_vec[1] = self.omega_vec[1] - (alpha * len(self.neg_pitch))  # in rad, based off 0.1 deg/s, also arbitrary
             for i in range(len(self.neg_pitch)):
                 self.thrustersOn[self.neg_pitch[i]-1] = 1  # minus one to fix index (there is no "zero" thruster)
-        else:
             for k in range(len(self.neg_pitch)):
                 self.thrustersOn[self.neg_pitch[k]-1] = 0
 
         ### positive yaw maneuver ###
-        if self.omega_vec[2] < 4 * self.base_slew_rate:  # yeah this is kinda arbitrary
+        while self.omega_vec[2] < 4 * self.base_slew_rate:  # yeah this is kinda arbitrary
             self.omega_vec[2] = self.omega_vec[2] + (alpha * len(self.pos_yaw))  # in rad, based off 0.1 deg/s, also arbitrary
             for i in range(len(self.pos_yaw)):
                 self.thrustersOn[self.pos_yaw[i] - 1] = 1  # minus one to fix index (there is no "zero" thruster)
-        else:
             for k in range(len(self.pos_yaw)):
                 self.thrustersOn[self.pos_yaw[k]-1] = 0
 
         ### negative yaw maneuver ###
-        if self.omega_vec[2] > 4 * self.base_slew_rate:  # yeah this is kinda arbitrary
+        while self.omega_vec[2] > 4 * self.base_slew_rate:  # yeah this is kinda arbitrary
             self.omega_vec[2] = self.omega_vec[2] - (alpha * len(self.neg_yaw))  # in rad, based off 0.1 deg/s, also arbitrary
             for i in range(len(self.neg_yaw)):
                 self.thrustersOn[self.neg_yaw[i] - 1] = 1  # minus one to fix index (there is no "zero" thruster)
-        else:
             for k in range(len(self.neg_yaw)):
                 self.thrustersOn[self.neg_yaw[k]-1] = 0
         self.yo = 'yuuuuh'
@@ -159,13 +153,14 @@ class GNC:
         self.omega_vec[0] = 0.00031413
         alpha = (self.thrustMag * self.CoM_to_thruster) / np.linalg.norm(self.MomDiag)# this is the ang acc imposed by each thruster. for our purposes, alpha = omega
         ### positive roll maneuver ###
-        while self.omega_vec[0] < 4 * self.base_slew_rate: # yeah this is kinda arbitrary
-            self.omega_vec[0] = self.omega_vec[0] + (alpha * len(self.pos_roll)) # in rad, based off 0.1 deg/s, also arbitrary
-            for i in range(len(self.pos_roll)):
-                self.thrustersOn[self.pos_roll[i]-1] = 1 # minus one to fix index (there is no "zero" thruster)
-            print(self.thrustersOn)
+       # while self.omega_vec[0] < 4 * self.base_slew_rate: # yeah this is kinda arbitrary
+        self.omega_vec[0] = self.omega_vec[0] +  (alpha * len(self.pos_roll)) # in rad, based off 0.1 deg/s, also arbitrary
+        for i in range(len(self.pos_roll)):
+            self.thrustersOn[self.pos_roll[i]-1] = 1 # minus one to fix index (there is no "zero" thruster)
+        print(self.thrustersOn)
         for i in range(len(self.pos_roll)):
             self.thrustersOn[self.pos_roll[i] - 1] = 0
+        print(self.omega_vec[0])
 
           #  if self.omega_vec[0] >= 4 * self.base_slew_rate: # checks to see if the attitude change is greater than our threshold. if so, turns thrusters off
            #     for i in range(len(self.pos_roll)):
@@ -194,8 +189,8 @@ class GNC:
         print('\n------------GNC Report------------\n')
         print('CMG saturation at {} percent capacity'.format((np.linalg.norm(self.lin_mom_vec)/self.mom_capacity)*100))
         print('Total power usage is {} kW'.format(self.power_usage/1000))
-        for i in range(len(self.thrustersOn)):
-            print('Thrusters firing: {}'.format(self.thrustersOn[i]))
+        #for i in range(len(self.thrustersOn)):
+         #   print('Thrusters firing: {}'.format(self.thrustersOn[i]))
         for i in range(len(self.omega_vec)):
             print('Total Angular velocity: {}'.format(self.omega_vec[i]))
 
