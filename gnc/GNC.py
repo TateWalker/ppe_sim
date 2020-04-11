@@ -4,23 +4,13 @@ import random
 import math
 
 
-
 data = pd.read_csv('gnc/ppe_mass_prop.csv')
 df = pd.DataFrame(data, columns=['Mass', 'CoMX', 'CoMY', 'CoMZ', 'Ixx', 'Iyy', 'Izz', 'Ixy', 'Ixz', 'Iyz'])
 
 thrusters = pd.read_csv('gnc/PPE_thruster_table_pythonformat.csv')
+
 th = pd.DataFrame(thrusters, columns=['Xpos', 'Ypos', 'Zpos', 'Xdir', 'Ydir', 'Zdir', 'ThrustMag'])
 
-ppe_mass = df['Mass']
-COMX = df['CoMX']
-CoMY = df['CoMY']
-CoMZ = df['CoMZ']
-Ixx = df['Ixx']
-Iyy = df['Iyy']
-Izz = df['Izz']
-Ixy = df['Ixy']
-Ixz = df['Ixz']
-Iyz = df['Iyz']
 
 th_Xpos = th['Xpos'].values
 th_Ypos = th['Ypos'].values
@@ -185,7 +175,7 @@ class GNC:
     def CheckSaturation(self):
         print('CMG saturation at {} percent capacity'.format((np.linalg.norm(self.lin_mom_vec)/self.mom_capacity)*100))
 
-    def GncReport(self):
+    def getReport(self):
         print('\n------------GNC Report------------\n')
         print('CMG saturation at {} percent capacity'.format((np.linalg.norm(self.lin_mom_vec)/self.mom_capacity)*100))
         print('Total power usage is {} kW'.format(self.power_usage/1000))
@@ -197,12 +187,6 @@ class GNC:
 
         print('\n---------------------------------------------\n')
 
-
-
-g = GNC()
-
-for i in range(200):
-    g.CmgWheel()
 
 # thruster firings will always return as zero becuase gnc report is called after the while loops are done in desat cmgs
 # this is the same reason why

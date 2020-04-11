@@ -4,6 +4,7 @@ from communication.Communications import Communications
 from gnc.GNC import GNC
 from power.Power import Power
 from propulsion.IonProp import IonProp
+import time
 
 def bootSequence():
 	#apply startup to every class
@@ -28,7 +29,7 @@ def runReports(subsystems):
 
 def main():
 	#detach, check systems,ion prop to orbit, shut off prop
-
+	#look at threading to wait one second
 	comms,gnc,power,prop = bootSequence()
 	subsystems = [comms,gnc,power,prop]
 	runReports(subsystems)
@@ -38,7 +39,11 @@ def main():
 		'Power':power.power_usage,
 		'Propulsion':prop.power_usage
 		}
-
+	mission_time=0.0
+	while(True):
+		time.wait(1)
+		
+		
 		
 
 
