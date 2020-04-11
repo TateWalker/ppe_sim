@@ -5,10 +5,10 @@ import math
 
 
 
-data = pd.read_csv (r'/Users/kendallmares/ppe_sim/gnc/ppe_mass_prop.csv')
+data = pd.read_csv('gnc/ppe_mass_prop.csv')
 df = pd.DataFrame(data, columns=['Mass', 'CoMX', 'CoMY', 'CoMZ', 'Ixx', 'Iyy', 'Izz', 'Ixy', 'Ixz', 'Iyz'])
 
-thrusters = pd.read_csv(r'/Users/kendallmares/ppe_sim/gnc/PPE_thruster_table_pythonformat.csv')
+thrusters = pd.read_csv('gnc/PPE_thruster_table_pythonformat.csv')
 th = pd.DataFrame(thrusters, columns=['Xpos', 'Ypos', 'Zpos', 'Xdir', 'Ydir', 'Zdir', 'ThrustMag'])
 
 ppe_mass = df['Mass']

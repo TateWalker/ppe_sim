@@ -2,6 +2,11 @@ import pylink
 
 class Communications():
 
+	#range between closest between the moon and farthest away
+
+	#farthest = 65000000m from moon
+	#closeset = 3233000m from moon
+
 	def __init__(self):
 		self.powered_on = False
 		self.power_usage = 0.0

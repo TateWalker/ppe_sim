@@ -8,7 +8,7 @@ class Power():
 		self.generating_power = False
 		self.generation_rate = 0.0
 		self.eco_mode = False
-		self.battery_level = 100 # percent
+		self.battery_level = 100 # percent USES BATTERY DURING ECLIPSE ONLY
 		self.power_usage = 0
 
 

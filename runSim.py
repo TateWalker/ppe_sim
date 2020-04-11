@@ -27,6 +27,7 @@ def runReports(subsystems):
 
 
 def main():
+	#detach, check systems,ion prop to orbit, shut off prop
 
 	comms,gnc,power,prop = bootSequence()
 	subsystems = [comms,gnc,power,prop]
@@ -45,3 +46,11 @@ def main():
 
 if __name__ == '__main__':
 	main()
+
+
+	#set wait for 1 second for gnc
+	#need to make backup flight computers
+
+
+	#if dist from earth > x
+		#fire prop
