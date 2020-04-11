@@ -2,11 +2,7 @@
 
 import random
 import pandas as pd
-import simpy
 from numpy import log
-
-RandomSeed = 16
-theSeed = random.seed(RandomSeed)
 
 # constants
 q = 1.60217663E-19  # charge constant in coulombs
@@ -18,11 +14,11 @@ massPro = 1.6726219E-27  # mass of a proton
 data = pd.read_csv ('propulsion/XenonData.csv')
 df = pd.DataFrame(data, columns=['FIE', 'Molar Mass', 'Density', 'MeltingPt', 'cHeat'])
 
-FIE = df['FIE'].values.tolist()  # kJ/mol
-MolMass = df['Molar Mass'].values.tolist()  # g
-rho = df['Density'].values.tolist()  # g/L
-meltPt = df['MeltingPt'].values.tolist()  # celsius
-cHeat = df['cHeat'].values.tolist()  # J/(g*K)
+FIE = df['FIE'].values  # kJ/mol
+MolMass = df['Molar Mass'].values  # g
+rho = df['Density'].values  # g/L
+meltPt = df['MeltingPt'].values  # celsius
+cHeat = df['cHeat'].values  # J/(g*K)
 
 
 
@@ -49,7 +45,7 @@ class IonProp:
         self.power = 12.5
         self.volts = 300
         self.setPowerDraw()
-        self.kg_ionized(simpy.Environment)
+        self.kg_ionized()
         print('\nPreparing to fire...')
         self.FireMainProp()
 
@@ -57,25 +53,22 @@ class IonProp:
         self.power_usage = self.power
 
 
-    def kg_ionized(self, env):
+    def kg_ionized(self):
         # intrinsic properties
         self.massKg = (MolMass / n) * 0.001  # kg
         molIonz = self.power / FIE  # mol/s
         MassIonz = molIonz * MolMass * 0.001  # kg/s
-        IonizProb = env.timeout(random.randint(0.40,0.60))
+        IonizProb = random.uniform(0.40,0.60)
         self.MassFlow = MassIonz*IonizProb  # kg/s
         print('Kg Ionized: {}'.format(self.massKg))
         print('Mass flow rate: {}'.format(self.MassFlow))
 
 
     def FireMainProp(self): # use massflow or kg_ionizd here?
-        while self.powerOn:
-            VelOut = pow((2 * self.volts * q) / self.massKg, 0.5) # m/s
-            massInit = 7500  # initial mass of PPE in kg
-            self.DeltaVel = VelOut*log(massInit/(massInit - self.MassFlow)) # is my notation correct here?    units: m/s
-            self.thrust = MolMass * massPro * VelOut * ((self.power * 1000) / self.volts) * cou  # Newtons  we may not need this value
-            if not self.powerOn:
-                 break
+        VelOut = pow((2 * self.volts * q) / self.massKg, 0.5) # m/s
+        massInit = 5945  # initial mass of PPE in kg
+        self.DeltaVel = VelOut*log(massInit/(massInit - self.MassFlow)) # is my notation correct here?    units: m/s
+        self.thrust = MolMass * massPro * VelOut * ((self.power * 1000) / self.volts) * cou  # Newtons  we may not need this value
         print('Delta V: {}'.format(self.DeltaVel))
         print('Thrust: {}'.format(self.thrust))
 
@@ -86,11 +79,7 @@ class IonProp:
         print('\n------------Ion Propulsion Report------------\n')
         print('We firing boyz? {}'.format(self.powerOn))
         print('Power draw: {}'.format(self.power))
-        self.kg_ionized(simpy.Environment)
+        self.kg_ionized()
         self.FireMainProp()
         print('\n---------------------------------------------\n')
 
-
-#env = simpy.Environment()
-#go = IonProp(env)
-#env.run(until=500)

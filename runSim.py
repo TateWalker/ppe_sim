@@ -1,4 +1,4 @@
-#script that runs the sim
+ #script that runs the sim
 
 from communication.Communications import Communications
 from gnc.GNC import GNC
