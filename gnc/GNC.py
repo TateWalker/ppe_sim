@@ -49,8 +49,7 @@ class GNC:
         self.rand_perb = 0
         self.rand_vec = np.zeros(3)
         self.mass_ship = 5945 # kg
-        self.MomDiag = [6821.860, 6533.29, 5245.846] # Ixx, Iyy, Izz format\
-        self.yo = 'hey'
+        self.MomDiag = [6821.860, 6533.29, 5245.846] # Ixx, Iyy, Izz format
 
 
 
@@ -61,7 +60,7 @@ class GNC:
         G = 6.67428E-11
         mass_moon = 7.34767309E+22
         r_p = 3233000
-        r_a = 6511
+        r_a = 65000000
         F_G_p = (G * mass_moon * self.mass_ship) / (r_p ** 2)
         F_G_a = (G * mass_moon * self.mass_ship) / (r_a ** 2)
         min_torque_a = ((0.05 * F_G_a) + F_G_a) * 1  # 1m is assumed min moment arm with a 5% increase in gravity gradient
@@ -135,26 +134,7 @@ class GNC:
                 self.thrustersOn[self.neg_yaw[i] - 1] = 1  # minus one to fix index (there is no "zero" thruster)
             for k in range(len(self.neg_yaw)):
                 self.thrustersOn[self.neg_yaw[k]-1] = 0
-        self.yo = 'yuuuuh'
 
-
-    def Test(self):
-        print(self.thrustersOn)
-        self.omega_vec[0] = 0.00031413
-        alpha = (self.thrustMag * self.CoM_to_thruster) / np.linalg.norm(self.MomDiag)# this is the ang acc imposed by each thruster. for our purposes, alpha = omega
-        ### positive roll maneuver ###
-       # while self.omega_vec[0] < 4 * self.base_slew_rate: # yeah this is kinda arbitrary
-        self.omega_vec[0] = self.omega_vec[0] +  (alpha * len(self.pos_roll)) # in rad, based off 0.1 deg/s, also arbitrary
-        for i in range(len(self.pos_roll)):
-            self.thrustersOn[self.pos_roll[i]-1] = 1 # minus one to fix index (there is no "zero" thruster)
-        print(self.thrustersOn)
-        for i in range(len(self.pos_roll)):
-            self.thrustersOn[self.pos_roll[i] - 1] = 0
-        print(self.omega_vec[0])
-
-          #  if self.omega_vec[0] >= 4 * self.base_slew_rate: # checks to see if the attitude change is greater than our threshold. if so, turns thrusters off
-           #     for i in range(len(self.pos_roll)):
-            #        self.thrustersOn[self.pos_roll[i]-1] = 0
 
     def CmgWheel(self):
         self.powerOn() # call the power function
@@ -166,9 +146,6 @@ class GNC:
         self.GncReport()
         if np.linalg.norm(self.lin_mom_vec) > self.mom_capacity:
             self.DesatOMM()
-            print(self.yo)
-
-
 
 # getters
 
