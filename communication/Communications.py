@@ -1,5 +1,4 @@
 #import pylink
-import pylink
 import logging
 
 logger = logging.getLogger(__name__)

@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 
 # fuel data
-data = pd.read_csv (r'XenonData.csv')
+data = pd.read_csv (r'propulsion/XenonData.csv')
 df = pd.DataFrame(data, columns=['FIE', 'Molar Mass', 'Density', 'MeltingPt', 'cHeat'])
 
 FIE = df['FIE'].values # kJ/mol
@@ -81,9 +81,3 @@ class IonProp:
         self.FireMainProp()
         print('\n---------------------------------------------\n')
 
-
-f = IonProp()
-
-for i in range(50):
-    f.MainPropOn()
-    f.getReport()
