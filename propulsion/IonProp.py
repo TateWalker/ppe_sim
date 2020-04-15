@@ -46,28 +46,30 @@ class IonProp:
         print('\nIon propulsion on')
         self.power = 12.5
         self.volts = 300
-
         print('\nPreparing to fire...')
+
+        # if distance to moon < "some tolerance":
+            #self.powerOn = False
 
 
     def kgIonized(self):
         # intrinsic properties
-        self.massKg = (MolMass / self.n) * 0.001  # kg
-        molIonz = self.power / FIE  # mol/s
-        MassIonz = molIonz * MolMass * 0.001  # kg/s this is assumed to be the value at 50% efficiency
-        IonizProb = random.uniform(0.15,0.30) # our efficiency for this is 65-80 %
-        self.MassFlow = MassIonz + MassIonz*IonizProb  # kg/s
-        print('Ionized mass flow rate: {} kg/s'.format(self.MassFlow))
+        if self.powerOn = True:
+            self.massKg = (MolMass / self.n) * 0.001  # kg
+            molIonz = self.power / FIE  # mol/s
+            MassIonz = molIonz * MolMass * 0.001  # kg/s this is assumed to be the value at 50% efficiency
+            IonizProb = random.uniform(0.15,0.30) # our efficiency for this is 65-80 %
+            self.MassFlow = MassIonz + MassIonz*IonizProb  # kg/s
+
 
 
     def FireMainProp(self): # use massflow or kg_ionizd here?
-        VelOut = pow((2 * self.volts * self.q) / self.massKg, 0.5) # m/s
-        massInit = 7478  # initial mass of PPE in kg
-        self.DeltaV = ((VelOut/1000)*3600)*log(massInit/(massInit - (self.MassFlow*3600))) # assumed for 1 second
-        self.LifeTimeDeltaVel = VelOut*log(massInit/(massInit - 2000)) # is my notation correct here?    units: m/s
-        self.thrust = MolMass * self.massPro * VelOut * ((self.power * 1000) / self.volts) * self.cou  # Newtons  we may not need this value
-        print('Current Delta V: {} km/hr'.format(self.DeltaV))
-        print('Thrust: {} mN'.format(self.thrust))
+        if self.powerOn = True:
+            VelOut = pow((2 * self.volts * self.q) / self.massKg, 0.5) # m/s
+            massInit = 7478  # initial mass of PPE in kg
+            self.DeltaV = ((VelOut/1000)*3600)*log(massInit/(massInit - (self.MassFlow*3600))) # assumed for 1 second
+            self.LifeTimeDeltaVel = VelOut*log(massInit/(massInit - 2000)) # is my notation correct here?    units: m/s
+            self.thrust = MolMass * self.massPro * VelOut * ((self.power * 1000) / self.volts) * self.cou  # Newtons  we may not need this value
 
 
 
@@ -77,7 +79,8 @@ class IonProp:
         print('\n------------Ion Propulsion Report------------\n')
         print('Power On? {}'.format(self.powerOn))
         print('Power draw: {}'.format(self.power))
-        self.kgIonized()
-        self.FireMainProp()
+        print('Ionized mass flow rate: {} kg/s'.format(self.MassFlow))
+        print('Current Delta V: {} km/hr'.format(self.DeltaV))
+        print('Thrust: {} mN'.format(self.thrust))
         print('\n---------------------------------------------\n')
 
