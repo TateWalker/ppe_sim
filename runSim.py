@@ -7,6 +7,7 @@ from propulsion.IonProp import IonProp
 import time
 import logging
 import sys
+import missionScenarios
 
 def initiateLogger():
 		# set up logging to file - see previous section for more details
@@ -41,9 +42,17 @@ def runReports(subsystems):
 	for i in subsystems:
 		i.getReport()
 
-def setRandomStates(subsystems): #should we make this not random but cyclical? would need velocity for that
-	orbit_range = np.linspace(356873,426452)
-	[x.setDistance(np.random.choice(orbit_range)) for x in subsystems] #synchronizes distance amongst subsystems
+def calculateDistance(subsystems,velocity):
+	if subsystems[0].distance < 356873:
+		velocity*=(-1)
+		missionScenarios.tooFar()
+	elif subsystems[0].distance>426452:
+		velocity*=(-1)
+		missionScenarios.tooClose()
+
+	new_distance = subsystems[0].distance+velocity
+	[x.setDistance(new_distance) for x in subsystems] #synchronizes distance amongst subsystems
+	return velocity
 
 def main():
 	#detach, check systems,ion prop to orbit, shut off prop
@@ -53,11 +62,21 @@ def main():
 	subsystems = [comms,gnc,power,prop]
 	runReports(subsystems)
 	mission_time=0 #sec
+	velocity = 5
+	random_scenarios = [missionScenarios.visitingVehicle, missionScenarios.eclipse]
 	while(True):
 		if mission_time%10 == 0:
 			runReports(subsystems)
-		setRandomStates(subsystems)
-		#if distance = CERTAIN_DISTANCE FOR EVENT: do something
+		elif mission_time%15 == 0:
+			chance = np.random.randint(0,101)
+			broken_subsystem = subsystems[np.random.randint(0,4)]
+			if chance > 70: missionScenarios.subsystemFail(broken_subsystem)
+		elif mission_time%30 == 0:
+			chance = np.random.randint(0,11)
+			if chance > 9: np.random.choice(random_scenarios)
+		else: missionScenarios.routine()
+		
+		velocity = calculateDistance(subsystems,velocity) #might need to make velocity a property of each class
 		power.calculateAvailablePower(subsystems)
 		time.sleep(1)
 		mission_time+=1
@@ -78,3 +97,6 @@ if __name__ == '__main__':
 
 	#if dist from earth > x
 		#fire prop
+
+
+		#need to make backup computers

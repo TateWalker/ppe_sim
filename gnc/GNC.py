@@ -27,6 +27,7 @@ th_mag = th['ThrustMag'].values
 class GNC:
 
     def __init__(self):
+        self.name = 'GNC A'
         self.power_on = False
         self.burn_time = 0
         self.distance = 0.0
@@ -86,9 +87,8 @@ class GNC:
                 self.rand_vec[i] = random.uniform(-rand_omega_p, rand_omega_p)
 
     def powerOn(self):
-        print('\n')
         self.power_on = True
-        logger.info('GNC powered on')
+        logger.info('{} powered on'.format(self.name))
         self.power_usage = 800 # joules # could also get a rough power value from the amount of torque generated
 
 

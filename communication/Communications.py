@@ -11,6 +11,7 @@ class Communications():
 	#closeset = 3233000m from moon
 
 	def __init__(self):
+		self.name = 'Communications A'
 		self.powered_on = False
 		self.power_usage = 0.0
 		self.is_stable = False

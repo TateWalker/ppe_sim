@@ -31,6 +31,7 @@ c_heat = 0.158
 class IonProp:
 
     def __init__(self):
+        self.name = 'Propulsion A'
         self.powered_on = False
         self.main_prop_burn_time = 0.0 # s
         self.mass_flow = 0.0 # kg/s
