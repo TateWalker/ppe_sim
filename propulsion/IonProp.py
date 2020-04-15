@@ -3,8 +3,12 @@
 import random
 import pandas as pd
 from numpy import log
+import logging
+
+logger = logging.getLogger(__name__)
 
 # constants
+
 
 # fuel data
 data = pd.read_csv (r'/Users/kendallmares/Downloads/XenonData.csv')
@@ -21,8 +25,8 @@ class IonProp:
     def __init__(self):
         self.powerOn = False
         self.main_prop_burn_time = 0.0 # s
-        self.MassFlow = 0.0 # kg/s
-        self.massKg = 0.0 # kg
+        self.mass_flow = 0.0 # kg/s
+        self.mass_kg = 0.0 # kg
         self.power = 0.0 # kW
         self.volts = 0.0 # volts
         self.LifeTimeDeltaVel = 0.0 # m/s
@@ -33,7 +37,6 @@ class IonProp:
         self.cou = 6.241509074E+18  # 1 coulomb
         self.massPro = 1.6726219E-27  # mass of a proton
         self.DeltaV = 0
-
 
 
 # setters
@@ -65,6 +68,7 @@ class IonProp:
         self.thrust = MolMass * self.massPro * VelOut * ((self.power * 1000) / self.volts) * self.cou  # Newtons  we may not need this value
         print('Current Delta V: {} km/hr'.format(self.DeltaV))
         print('Thrust: {} mN'.format(self.thrust))
+
 
 
 

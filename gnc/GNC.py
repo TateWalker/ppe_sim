@@ -2,8 +2,16 @@ import pandas as pd
 import numpy as np
 import random
 import math
+import logging
 
-thrusters = pd.read_csv(r'/Users/kendallmares/ppe_sim/gnc/PPE_thruster_table_pythonformat.csv')
+logger = logging.getLogger(__name__)
+
+
+data = pd.read_csv('gnc/ppe_mass_prop.csv')
+df = pd.DataFrame(data, columns=['Mass', 'CoMX', 'CoMY', 'CoMZ', 'Ixx', 'Iyy', 'Izz', 'Ixy', 'Ixz', 'Iyz'])
+
+thrusters = pd.read_csv('gnc/PPE_thruster_table_pythonformat.csv')
+
 th = pd.DataFrame(thrusters, columns=['Xpos', 'Ypos', 'Zpos', 'Xdir', 'Ydir', 'Zdir', 'ThrustMag'])
 
 
@@ -19,8 +27,10 @@ th_mag = th['ThrustMag'].values
 class GNC:
 
     def __init__(self):
+        self.name = 'GNC A'
         self.power_on = False
         self.burn_time = 0
+        self.distance = 0.0
         self.thrustersOn = np.zeros(32)
         self.thrustMag = th_mag[0] # N
         self.CoM_to_thruster = 4 # meters
@@ -49,6 +59,8 @@ class GNC:
 
 
 # setters
+    def setDistance(self, distance):
+        self.distance = distance
 
     def RandPerturbation(self):
         # math
@@ -76,6 +88,7 @@ class GNC:
 
     def powerOn(self):
         self.power_on = True
+        logger.info('{} powered on'.format(self.name))
         self.power_usage = 800 # joules # could also get a rough power value from the amount of torque generated
 
 
@@ -87,48 +100,60 @@ class GNC:
             self.omega_vec[0] = self.omega_vec[0] + (alpha * len(self.pos_roll)) # in rad, based off 0.1 deg/s, also arbitrary
             for i in range(len(self.pos_roll)):
                 self.thrustersOn[self.pos_roll[i]-1] = 1 # minus one to fix index (there is no "zero" thruster)
+                logger.debug('Thruster {} on'.format(self.pos_roll[i]))
             for k in range(len(self.pos_roll)):
                 self.thrustersOn[self.pos_roll[k]-1] = 0
+                logger.debug('Thruster {} off'.format(self.pos_roll[i]))
 
         ### negative roll maneuver ###
         while self.omega_vec[0] > 4 * self.base_slew_rate: # yeah this is kinda arbitrary
             self.omega_vec[0] = self.omega_vec[0] - (alpha * len(self.neg_roll)) # in rad, based off 0.1 deg/s, also arbitrary
             for i in range(len(self.neg_roll)):
                 self.thrustersOn[self.neg_roll[i]-1] = 1 # minus one to fix index (there is no "zero" thruster)
+                logger.debug('Thruster {} on'.format(self.neg_roll[i]))
             for k in range(len(self.neg_roll)):
                 self.thrustersOn[self.neg_roll[k]-1] = 0
+                logger.debug('Thruster {} off'.format(self.neg_roll[i]))
 
         ### positive pitch maneuver ###
         while self.omega_vec[1] < 4 * self.base_slew_rate: # yeah this is kinda arbitrary
             self.omega_vec[1] = self.omega_vec[1] + (alpha * len(self.pos_pitch)) # in rad, based off 0.1 deg/s, also arbitrary
             for i in range(len(self.pos_pitch)):
                 self.thrustersOn[self.pos_pitch[i]-1] = 1 # minus one to fix index (there is no "zero" thruster)
+                logger.debug('Thruster {} on'.format(self.pos_pitch[i]))
             for k in range(len(self.pos_pitch)):
                 self.thrustersOn[self.pos_pitch[k]-1] = 0
+                logger.debug('Thruster {} off'.format(self.pos_pitch[i]))
 
         ### negative pitch maneuver ###
         while self.omega_vec[1] > 4 * self.base_slew_rate:  # yeah this is kinda arbitrary
             self.omega_vec[1] = self.omega_vec[1] - (alpha * len(self.neg_pitch))  # in rad, based off 0.1 deg/s, also arbitrary
             for i in range(len(self.neg_pitch)):
                 self.thrustersOn[self.neg_pitch[i]-1] = 1  # minus one to fix index (there is no "zero" thruster)
+                logger.debug('Thruster {} on'.format(self.neg_pitch[i]))
             for k in range(len(self.neg_pitch)):
                 self.thrustersOn[self.neg_pitch[k]-1] = 0
+                logger.debug('Thruster {} off'.format(self.neg_pitch[i]))
 
         ### positive yaw maneuver ###
         while self.omega_vec[2] < 4 * self.base_slew_rate:  # yeah this is kinda arbitrary
             self.omega_vec[2] = self.omega_vec[2] + (alpha * len(self.pos_yaw))  # in rad, based off 0.1 deg/s, also arbitrary
             for i in range(len(self.pos_yaw)):
                 self.thrustersOn[self.pos_yaw[i] - 1] = 1  # minus one to fix index (there is no "zero" thruster)
+                logger.debug('Thruster {} on'.format(self.pos_yaw[i]))
             for k in range(len(self.pos_yaw)):
                 self.thrustersOn[self.pos_yaw[k]-1] = 0
+                logger.debug('Thruster {} off'.format(self.pos_yaw[i]))
 
         ### negative yaw maneuver ###
         while self.omega_vec[2] > 4 * self.base_slew_rate:  # yeah this is kinda arbitrary
             self.omega_vec[2] = self.omega_vec[2] - (alpha * len(self.neg_yaw))  # in rad, based off 0.1 deg/s, also arbitrary
             for i in range(len(self.neg_yaw)):
                 self.thrustersOn[self.neg_yaw[i] - 1] = 1  # minus one to fix index (there is no "zero" thruster)
+                logger.debug('Thruster {} on'.format(self.neg_yaw[i]))
             for k in range(len(self.neg_yaw)):
                 self.thrustersOn[self.neg_yaw[k]-1] = 0
+                logger.debug('Thruster {} off'.format(self.neg_yaw[i]))
 
 
     def CmgWheel(self):
@@ -145,20 +170,16 @@ class GNC:
 # getters
 
     def CheckSaturation(self):
-        print('CMG saturation at {} percent capacity'.format((np.linalg.norm(self.lin_mom_vec)/self.mom_capacity)*100))
+        logger.info('CMG saturation at {} percent capacity'.format((np.linalg.norm(self.lin_mom_vec)/self.mom_capacity)*100))
 
     def getReport(self):
         print('\n------------GNC Report------------\n')
-        print('CMG saturation at {} percent capacity'.format((np.linalg.norm(self.lin_mom_vec)/self.mom_capacity)*100))
-        print('Total power usage is {} kW'.format(self.power_usage/1000))
+        logger.info('CMG saturation at {} percent capacity'.format((np.linalg.norm(self.lin_mom_vec)/self.mom_capacity)*100))
+        logger.info('Total power usage is {} kW'.format(self.power_usage/1000))
         #for i in range(len(self.thrustersOn)):
          #   print('Thrusters firing: {}'.format(self.thrustersOn[i]))
         for i in range(len(self.omega_vec)):
-            print('Total Angular velocity: {}'.format(self.omega_vec[i]))
+            logger.info('Total Angular velocity: {}'.format(self.omega_vec[i]))
 
 
         print('\n---------------------------------------------\n')
-
-
-# thruster firings will always return as zero becuase gnc report is called after the while loops are done in desat cmgs
-# this is the same reason why
