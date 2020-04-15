@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 
 # fuel data
-data = pd.read_csv (r'/Users/kendallmares/Downloads/XenonData.csv')
+data = pd.read_csv (r'XenonData.csv')
 df = pd.DataFrame(data, columns=['FIE', 'Molar Mass', 'Density', 'MeltingPt', 'cHeat'])
 
 FIE = df['FIE'].values # kJ/mol

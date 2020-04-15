@@ -178,8 +178,8 @@ class GNC:
         logger.info('Total power usage is {} kW'.format(self.power_usage/1000))
         #for i in range(len(self.thrustersOn)):
          #   print('Thrusters firing: {}'.format(self.thrustersOn[i]))
-        for i in range(len(self.omega_vec)):
-            logger.info('Total Angular velocity: {}'.format(self.omega_vec[i]))
+        #for i in range(len(self.omega_vec)):
+        logger.info('Total Angular velocity: {}'.format(np.linalg.norm(self.omega_vec)))
 
 
         print('\n---------------------------------------------\n')
