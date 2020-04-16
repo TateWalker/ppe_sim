@@ -45,10 +45,10 @@ def runReports(subsystems):
 def calculateDistance(subsystems,velocity):
 	if subsystems[0].distance < 356873:
 		velocity*=(-1)
-		missionScenarios.tooFar()
+		missionScenarios.closeToEarth()
 	elif subsystems[0].distance>426452:
 		velocity*=(-1)
-		missionScenarios.tooClose()
+		missionScenarios.farFromEarth()
 
 	new_distance = subsystems[0].distance+velocity
 	[x.setDistance(new_distance) for x in subsystems] #synchronizes distance amongst subsystems
@@ -74,7 +74,7 @@ def main():
 		elif mission_time%30 == 0:
 			chance = np.random.randint(0,11)
 			if chance > 9: np.random.choice(random_scenarios)
-		else: missionScenarios.routine()
+		# else: missionScenarios.routine()
 		
 		velocity = calculateDistance(subsystems,velocity) #might need to make velocity a property of each class
 		power.calculateAvailablePower(subsystems)
