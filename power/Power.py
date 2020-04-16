@@ -20,7 +20,7 @@ class Power():
 	def getReport(self):
 		print('\n-------Power-------\n')
 		logger.info('{} powered on: {}'.format(self.name, self.powered_on))
-		logger.info('Power usage: {}kWh'.format(self.power_usage))
+		logger.info('Power Available: {:3.3f}kWh'.format(self.available_power))
 		logger.info('Generating power: {}'.format(self.generating_power))
 		print('\n----------------------------\n')
 
@@ -32,17 +32,19 @@ class Power():
 	def powerOn(self):
 		self.powered_on = True
 		logger.info('Power on')
-		logger.info('{} kWh available'.format(self.available_power))
+		logger.info('{:3.3f}kWh available'.format(self.available_power))
 		self.generating_power = True
 
 		
 		
 	def calculateAvailablePower(self,subsystems):
+		self.available_power = self.generation_rate
+		all_power_usage = 0
 		for i in subsystems:
-			self.available_power-=i.power_usage
-			logger.info('{} kWh available'.format(self.available_power))
+			all_power_usage+=i.power_usage
+		self.available_power = self.available_power-all_power_usage
 
-	def eclipse(self):
+	def eclipse(self,subsystems):
 		self.generating_power = False
 		full_capacity = self.battery_capacity
 		logger.info('Power generation paused')

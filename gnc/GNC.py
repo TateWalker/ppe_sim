@@ -28,7 +28,7 @@ class GNC:
 
     def __init__(self):
         self.name = 'GNC A'
-        self.power_on = False
+        self.powered_on = False
         self.burn_time = 0
         self.distance = 0.0
         self.thrustersOn = np.zeros(32)
@@ -88,9 +88,8 @@ class GNC:
                 self.rand_vec[i] = random.uniform(-rand_omega_p, rand_omega_p)
 
     def powerOn(self):
-        self.power_on = True
-        logger.info('{} powered on'.format(self.name))
-        self.power_usage = 800 # kW # could also get a rough power value from the amount of torque generated
+        self.powered_on = True
+        self.power_usage = 800/1000 # W # could also get a rough power value from the amount of torque generated
 
 
     def DesatOMM(self):
@@ -166,19 +165,19 @@ class GNC:
             self.omega_vec[i] = self.omega_vec[i] + self.base_slew_rate # add an average slew rate each second
             self.omega_vec[i] = self.omega_vec[i] + self.rand_vec[i] # add a random perturbation each second
             self.lin_mom_vec[i] = self.MomDiag[i]*self.omega_vec[i]
-        self.getReport()
         if np.linalg.norm(self.lin_mom_vec) > self.mom_capacity:
             self.DesatOMM()
 
 # getters
 
     def CheckSaturation(self):
-        logger.info('CMG saturation at {} percent capacity'.format((np.linalg.norm(self.lin_mom_vec)/self.mom_capacity)*100))
+        logger.info('CMG saturation at {:2.2f} percent capacity'.format((np.linalg.norm(self.lin_mom_vec)/self.mom_capacity)*100))
 
     def getReport(self):
         print('\n------------------GNC Report------------------\n')
-        logger.info('Total Power Usage is {} kW'.format(self.power_usage/1000))
-        logger.info('CMG Saturation at {} Percent Capacity'.format((np.linalg.norm(self.lin_mom_vec)/self.mom_capacity)*100))
-        logger.info('Total Angular Velocity: {} rad/s'.format(np.linalg.norm(self.omega_vec)))
+        logger.info('{} powered on: {}'.format(self.name, self.powered_on))
+        logger.info('Total Power Usage is {:2.2f}kWh'.format(self.power_usage))
+        logger.info('CMG Saturation at {:2.2f} Percent Capacity'.format((np.linalg.norm(self.lin_mom_vec)/self.mom_capacity)*100))
+        logger.info('Total Angular Velocity: {:3.2f} rad/s'.format(np.linalg.norm(self.omega_vec)))
         logger.info('Desaturation Maneuvers Performed: {}'.format(sum(self.desat_arr)))
         print('\n---------------------------------------------\n')

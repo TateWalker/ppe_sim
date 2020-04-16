@@ -1,5 +1,6 @@
 #import pylink
 import logging
+import numpy as np
 from communication import getLinkBudget
 from communication import linkBudgetConstants
 logger = logging.getLogger(__name__)
@@ -17,7 +18,6 @@ class Communications():
 		self.power_usage = 0.0
 		self.is_stable = False
 		self.signal_strength_forward = 0.0 #Mbps
-		self.signal_strength_return = 0.0 #Mbps
 		self.connected = False
 		self.distance = 0.0 #km
 		self.f_stable = False
@@ -25,28 +25,22 @@ class Communications():
 
 	#getters
 
-	def getMessage(self): #read from queue
-		print('Got message')
-
 	def getFinalReport(self):
 		getLinkBudget.main()
+		print('Final communication report in the export folder')
 
 	def getSignalStrength(self):
 		m = linkBudgetConstants.DOWNLINK
-  		self.signal_strength_forward = m.max_bitrate_hz*m.allocation_hz*1e6
-  		e = linkBudgetConstants.UPLINK
-  		self.signal_strength_return = e.max_bitrate_hz*e.allocation_hz*1e6
-		print('Forward signal strength = {} Mbps'.format(self.signal_strength_forward))
-		print('Return signal strength = {} Mbps'.format(self.signal_strength_return))
+		self.signal_strength_return = m.max_bitrate_hz*m.allocation_hz/1e13 + float(np.random.uniform(-10,10))
 
 	def getReport(self):
-		print('\n-------Communications-------\n')
-		logger.info('Powered on: {}'.format(self.powered_on))
-		logger.info('Power usage: {}W'.format(self.power_usage))
-		self.getSignalStrength()
+		logger.info('\n-------Communications-------\n')
+		logger.info('{} powered on: {}'.format(self.name, self.powered_on))
+		logger.info('Power usage: {}kWh'.format(self.power_usage))
+		logger.info('Signal strength = {:2.3f} Mbps'.format(self.signal_strength_return))
 		logger.info('Stable connection: {}'.format(self.is_stable))
 		logger.info('Connected: {}'.format(self.connected))
-		print('\n----------------------------\n')
+		logger.info('\n----------------------------\n')
 
 
 	#setters 
@@ -58,7 +52,7 @@ class Communications():
 		print('\n')
 		self.powered_on = True
 		logger.info('Communications powered on')
-		self.setPowerDraw(10)
+		self.setPowerDraw(10/1000)
 		logger.info('Establishing link...')
 		self.getSignalStrength()
 		self.measureStability()
@@ -72,27 +66,13 @@ class Communications():
 	def setPowerDraw(self, power):
 		self.power_usage = power
 
-	def setSignalStrength(self):
-		signal_strength_forward = 1
-		signal_strength_return = 2
 	
 	def measureStability(self):
-		if self.signal_strength_forward < 30:
-			logger.warning('Forward signal unstable')
-			self.f_stable = False
-		else:
-			self.f_stable = True
-
-		if self.signal_strength_return < 75:
+		if self.signal_strength_return < 20:
 			logger.warning('Return signal unstable')
 			self.r_stable = False
 		else:
-			self.r_stable = True
-			
-		if self.f_stable and self.r_stable:
-			logger.info('All communications stable')
+			self.r_stable = True	
+			logger.info('Communications stable')
 			self.is_stable = True
-
-	def sendMessage(self): #send to nowhere (NASA)
-		print('Sent message, no response :/')
 	

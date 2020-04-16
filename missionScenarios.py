@@ -3,13 +3,15 @@ import logging
 logger = logging.getLogger(__name__)
 
 def routine(subsystems):
-	comms,gnc,power,prop = subsystems
+	comms,gnc,power = subsystems
 	gnc.CmgWheel() # this does not seem to be called 
+	comms.getSignalStrength()
+	power.calculateAvailablePower(subsystems)
 	
 
-def eclipse(power):
+def eclipse(power,subsystems):
 	logger.info('Entering eclipse')
-	power.eclipse()
+	power.eclipse(subsystems)
 
 def subsystemFail(subsystem):
 	if subsystem.name[-1] == 'A':

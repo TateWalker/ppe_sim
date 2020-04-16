@@ -57,23 +57,26 @@ def main():
 	i = 0
 
 	while(True):
+		print(chr(27) + "[2J")
+		logging.info('T+{} hours'.format(mission_time))
 		runReports(subsystems)
 		if mission_time%15 == 0:
 			chance = np.random.randint(0,101)
-			broken_subsystem = subsystems[np.random.randint(0,4)]
-			if chance > 70: missionScenarios.subsystemFail(broken_subsystem)
-		else: missionScenarios.routine()
+			broken_subsystem = subsystems[np.random.randint(0,3)]
+			if chance > 90: missionScenarios.subsystemFail(broken_subsystem)
+		else: missionScenarios.routine(subsystems)
 		if i == 20:
-			missionScenarios.eclipse(power)
+			missionScenarios.eclipse(power,subsystems)
 		new_distance = distances[i]
 		calculateDistance(subsystems,new_distance)
-		power.calculateAvailablePower(subsystems)
 		time.sleep(1)
 		mission_time+=6
-		i+=1
-		if mission_time>133:
-			False
+		if mission_time==132:
+			break
+		else:
+			i+=1
 
+	comms.getFinalReport()
 		
 
 

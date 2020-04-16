@@ -54,9 +54,9 @@ class IonProp:
                 self.powered_on = False
                 logger.info('\n Arrived at NRHO orbit')
                 logger.info('\n---------Final Ion Propulsion Report---------\n')
-                logger.info('Total Power Draw: {} kWh'.format(self.power * (self.hours - 1 + (self.distance - 356870) / self.DeltaV)))
-                logger.info('Total Ionized Mass: {} kg/s'.format(self.mass_used - (self.MassFlow*30)))
-                logger.info('Transit Time: {} hours'.format(self.hours - 1 + (self.distance - 356870) / self.DeltaV) )
+                logger.info('Total Power Draw: {:5.5f} kWh'.format(float(self.power * (self.hours - 1 + (self.distance - 356870) / self.DeltaV))))
+                logger.info('Total Ionized Mass: {:5.3f} kg/s'.format(float(self.mass_used - (self.MassFlow*30))))
+                logger.info('Transit Time: {:2.2f} hours'.format(float(self.hours - 1 + (self.distance - 356870) / self.DeltaV) ))
                 logger.info('\n---------------------------------------------\n')
 
 
@@ -89,9 +89,9 @@ class IonProp:
 # getters
     def getReport(self):
         logger.info('\n------------Ion Propulsion Report------------\n')
-        logger.info('Power Draw: {}'.format(self.power))
-        logger.info('Ionized Mass Flow Rate: {} kg/s'.format(self.MassFlow))
-        logger.info('Current Delta V: {} km/hr'.format(self.DeltaV))
-        logger.info('Distance to Moon: {}'.format(356870 - self.distance))
-        logger.info('Time in Transit: {} hours'.format(self.hours))
+        logger.info('Power Draw: {:2.2f}'.format(float(self.power)))
+        logger.info('Ionized Mass Flow Rate: {:5.3f} kg/s'.format(float(self.MassFlow)))
+        logger.info('Current Delta V: {:5.3f} km/hr'.format(float(self.DeltaV)))
+        logger.info('Distance to Moon: {:10.2f}'.format(356870 - float(self.distance)))
+        logger.info('Time in Transit: {:5.2f} hours'.format(float(self.hours)))
         logger.info('\n---------------------------------------------\n')

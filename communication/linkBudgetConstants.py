@@ -120,5 +120,6 @@ UPLINK = pylink.DAGModel([geometry,
                       gs_transmitter,
                       gs_tx_antenna,
                       ka_channel,
+                      modulation,
                       pylink.LinkBudget(name='Ka Uplink',
                                         is_downlink=False)])
