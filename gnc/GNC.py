@@ -173,13 +173,10 @@ class GNC:
         logger.info('CMG saturation at {} percent capacity'.format((np.linalg.norm(self.lin_mom_vec)/self.mom_capacity)*100))
 
     def getReport(self):
-        print('\n------------GNC Report------------\n')
+        print('\n------------------GNC Report------------------\n')
         logger.info('CMG saturation at {} percent capacity'.format((np.linalg.norm(self.lin_mom_vec)/self.mom_capacity)*100))
         logger.info('Total power usage is {} kW'.format(self.power_usage/1000))
-        #for i in range(len(self.thrustersOn)):
-         #   print('Thrusters firing: {}'.format(self.thrustersOn[i]))
-        for i in range(len(self.omega_vec)):
-            logger.info('Total Angular velocity: {}'.format(self.omega_vec[i]))
+        logger.info('Total Angular velocity: {} rad/s'.format(np.linalg.norm(self.omega_vec)))
 
 
         print('\n---------------------------------------------\n')

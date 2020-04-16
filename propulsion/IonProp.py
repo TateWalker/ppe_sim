@@ -8,90 +8,79 @@ import logging
 logger = logging.getLogger(__name__)
 
 # constants
-q = 1.60217663E-19  # charge constant in coulombs
-n = 6.0221409E+23  # avocado's numba
-cou = 6.241509074E+18  # 1 coulomb
-mass_proton = 1.6726219E-27  # mass of a proton
+
 
 # fuel data
-# data = pd.read_csv ('propulsion/XenonData.csv')
-# df = pd.DataFrame(data, columns=['FIE', 'Molar Mass', 'Density', 'MeltingPt', 'cHeat'])
-fie = 1170
-# fie = df['FIE'].values  # kJ/mol
-# mol_mass = df['Molar Mass'].values  # g
-mol_mass = 131.29
-#rho = df['Density'].values  # g/L
-rho = 5.851
-melting_point = -111.8
-# melting_point = df['MeltingPt'].values  # celsius
-# c_heat = df['cHeat'].values  # J/(g*K)
-c_heat = 0.158
+data = pd.read_csv (r'propulsion/XenonData.csv')
+df = pd.DataFrame(data, columns=['FIE', 'Molar Mass', 'Density', 'MeltingPt', 'cHeat'])
 
+FIE = df['FIE'].values # kJ/mol
+MolMass = df['Molar Mass'].values  # g
+rho = df['Density'].values # g/L
+meltPt = df['MeltingPt'].values # celsius
+cHeat = df['cHeat'].values  # J/(g*K)
 
 class IonProp:
 
     def __init__(self):
-        self.name = 'Propulsion A'
-        self.powered_on = False
+        self.powerOn = False
         self.main_prop_burn_time = 0.0 # s
         self.mass_flow = 0.0 # kg/s
         self.mass_kg = 0.0 # kg
         self.power = 0.0 # kW
         self.volts = 0.0 # volts
-        self.delta_v = 0.0 # m/s
+        self.LifeTimeDeltaVel = 0.0 # m/s
         self.thrust = 0.0 # N
-        self.power_usage = 0.0
-        self.set_power_draw = 40 # change later
+        self.SetPowerDraw = 40 # change later
+        self.q = 1.60217663E-19  # charge constant in coulombs
+        self.n = 6.0221409E+23  # avocado's numba
+        self.cou = 6.241509074E+18  # 1 coulomb
+        self.massPro = 1.6726219E-27  # mass of a proton
+        self.DeltaV = 0
 
 
 # setters
 
-
-    def setDistance(self, distance):
-        self.distance = distance
-
-    def powerOn(self):
-        print('\n')
-        self.powered_on = True
-        logger.info('Ion propulsion on')
+    def MainPropOn(self):
+        self.powerOn = True
+        print('\nIon propulsion on')
         self.power = 12.5
         self.volts = 300
-        self.setPowerDraw()
-        self.kgIonized()
-        logger.info('Preparing to fire...')
-        self.fireMainProp()
+        print('\nPreparing to fire...')
 
-    def setPowerDraw(self):
-        self.power_usage = self.power
+        # if distance to moon < "some tolerance":
+            #self.powerOn = False
 
 
-    def kgIonized(self):       #is it supposed to calculate these values everytime we run a report?
+    def kgIonized(self):
         # intrinsic properties
-        self.mass_kg = (mol_mass / n) * 0.001  # kg
-        mol_ionized = self.power / fie  # mol/s
-        mass_ionized = mol_ionized * mol_mass * 0.001  # kg/s
-        ion_probability = random.uniform(0.40,0.60)
-        self.mass_flow = mass_ionized*ion_probability  # kg/s
-        logger.info('Kg Ionized: {}'.format(round(self.mass_kg,2)))
-        logger.info('Mass flow rate: {}'.format(round(self.mass_flow,2)))
+        if self.powerOn = True:
+            self.massKg = (MolMass / self.n) * 0.001  # kg
+            molIonz = self.power / FIE  # mol/s
+            MassIonz = molIonz * MolMass * 0.001  # kg/s this is assumed to be the value at 50% efficiency
+            IonizProb = random.uniform(0.15,0.30) # our efficiency for this is 65-80 %
+            self.MassFlow = MassIonz + MassIonz*IonizProb  # kg/s
 
 
-    def fireMainProp(self): # use massflow or kg_ionizd here?
-        vel_out = pow((2 * self.volts * q) / self.mass_kg, 0.5) # m/s
-        mass_init = 5945  # initial mass of PPE in kg
-        self.delta_v = vel_out*log(mass_init/(mass_init - self.mass_flow)) # is my notation correct here?    units: m/s
-        self.thrust = mol_mass * mass_proton * vel_out * ((self.power * 1000) / self.volts) * cou  # Newtons  we may not need this value
-        logger.info('Delta V: {}'.format(self.delta_v))
-        logger.info('Thrust: {}'.format(self.thrust))
+
+    def FireMainProp(self): # use massflow or kg_ionizd here?
+        if self.powerOn = True:
+            VelOut = pow((2 * self.volts * self.q) / self.massKg, 0.5) # m/s
+            massInit = 7478  # initial mass of PPE in kg
+            self.DeltaV = ((VelOut/1000)*3600)*log(massInit/(massInit - (self.MassFlow*3600))) # assumed for 1 second
+            self.LifeTimeDeltaVel = VelOut*log(massInit/(massInit - 2000)) # is my notation correct here?    units: m/s
+            self.thrust = MolMass * self.massPro * VelOut * ((self.power * 1000) / self.volts) * self.cou  # Newtons  we may not need this value
+
 
 
 
 # getters
     def getReport(self):
         print('\n------------Ion Propulsion Report------------\n')
-        logger.info('Firing: {}'.format(self.powered_on))
-        logger.info('Power draw: {}'.format(self.power))
-        self.kgIonized()
-        self.fireMainProp()
+        print('Power On? {}'.format(self.powerOn))
+        print('Power draw: {}'.format(self.power))
+        print('Ionized mass flow rate: {} kg/s'.format(self.MassFlow))
+        print('Current Delta V: {} km/hr'.format(self.DeltaV))
+        print('Thrust: {} mN'.format(self.thrust))
         print('\n---------------------------------------------\n')
 

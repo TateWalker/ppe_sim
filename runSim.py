@@ -90,7 +90,6 @@ def main():
 if __name__ == '__main__':
 	main()
 
-
 	#set wait for 1 second for gnc
 	#need to make backup flight computers
 
