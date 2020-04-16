@@ -53,7 +53,6 @@ def main():
 	mission_time=0 #hrs
 	distances = np.linspace(356873,426452,22)
 	comms.getSignalStrength()
-	exit()
 	i = 0
 	prop.MainPropOn()
 

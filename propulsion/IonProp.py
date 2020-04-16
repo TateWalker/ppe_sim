@@ -48,7 +48,7 @@ class IonProp:
         while self.powered_on:
             self.kgIonized()
             self.FireMainProp()
-            if self.hours % 10 == 0:
+            if self.hours % 50 == 0:
                 self.getReport()
             if 356870 - self.distance <= 0:
                 self.powered_on = False
