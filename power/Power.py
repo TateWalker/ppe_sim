@@ -7,10 +7,10 @@ class Power():
 	def __init__(self):
 		self.name = 'Power A'
 		self.powered_on = False
-		self.available_power = self.generation_rate
 		self.generating_power = False
 		self.generation_rate = 415.5 #kWh
 		self.battery_capacity = 170  #kWh
+		self.available_power = self.generation_rate
 		self.power_usage = 0
 		self.distance = 0
 
@@ -51,7 +51,4 @@ class Power():
 		if self.battery_capacity/full_capacity < .2:
 			logger.warning('Battery less than 20\% capacity!')
 		else:
-			logger.info('Battery at {}\% capacity'.format(self.battery_capacity/full_capacity*100)
-
-	
-
+			logger.info('Battery at {}\% capacity'.format(self.battery_capacity/full_capacity*100))

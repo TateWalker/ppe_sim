@@ -23,7 +23,7 @@ cHeat = df['cHeat'].values  # J/(g*K)
 class IonProp:
 
     def __init__(self):
-        self.powerOn = False
+        self.powered_on = False
         self.main_prop_burn_time = 0.0 # s
         self.mass_flow = 0.0 # kg/s
         self.mass_kg = 0.0 # kg
@@ -52,7 +52,7 @@ class IonProp:
 
     def kgIonized(self):
         # intrinsic properties
-        if self.powerOn = True:
+        if self.powerOn == True:
             self.massKg = (MolMass / self.n) * 0.001  # kg
             molIonz = self.power / FIE  # mol/s
             MassIonz = molIonz * MolMass * 0.001  # kg/s this is assumed to be the value at 50% efficiency
@@ -62,7 +62,7 @@ class IonProp:
 
 
     def FireMainProp(self): # use massflow or kg_ionizd here?
-        if self.powerOn = True:
+        if self.powerOn == True:
             VelOut = pow((2 * self.volts * self.q) / self.massKg, 0.5) # m/s
             massInit = 7478  # initial mass of PPE in kg
             self.DeltaV = ((VelOut/1000)*3600)*log(massInit/(massInit - (self.MassFlow*3600))) # assumed for 1 second

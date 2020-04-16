@@ -31,7 +31,7 @@ def bootSequence():
 	prop = IonProp()
 
 	power.powerOn()
-	prop.powerOn()
+	prop.MainPropOn()
 	comms.powerOn()
 	gnc.powerOn()
 	
@@ -42,27 +42,20 @@ def runReports(subsystems):
 	for i in subsystems:
 		i.getReport()
 
-def calculateDistance(subsystems,velocity):
-	if subsystems[0].distance < 356873:
-		velocity*=(-1)
-		missionScenarios.closeToEarth()
-	elif subsystems[0].distance>426452:
-		velocity*=(-1)
-		missionScenarios.farFromEarth()
-
-	new_distance = subsystems[0].distance+velocity
+def calculateDistance(subsystems,new_distance): #do linspace instead
 	[x.setDistance(new_distance) for x in subsystems] #synchronizes distance amongst subsystems
-	return velocity
 
 def main():
 	initiateLogger()
 	comms,gnc,power,prop = bootSequence()
 	subsystems = [comms,gnc,power,prop]
 	runReports(subsystems)
-	mission_time=0 #sec
-	velocity = 5
+	mission_time=0 #hrs
+	distances = np.linspace(356873,426452,22)
 	random_scenarios = [missionScenarios.visitingVehicle, missionScenarios.eclipse(power)]
-
+	comms.getSignalStrength()
+	exit()
+	i = 0
 	while(True):
 		if mission_time%10 == 0:
 			runReports(subsystems)
@@ -74,11 +67,14 @@ def main():
 			chance = np.random.randint(0,11)
 			if chance > 9: np.random.choice(random_scenarios)
 		# else: missionScenarios.routine()
-		
-		velocity = calculateDistance(subsystems,velocity) #might need to make velocity a property of each class
+		new_distance = distances[i]
+		calculateDistance(subsystems,new_distance)
 		power.calculateAvailablePower(subsystems)
 		time.sleep(1)
-		mission_time+=1
+		mission_time+=6
+		i+=1
+		if mission_time>133:
+			False
 
 		
 
