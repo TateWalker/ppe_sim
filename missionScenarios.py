@@ -2,26 +2,13 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-def closeToEarth():
-	logger.info('PPE is too far from the moon. Decreasing velocity.')
-
-def farFromEarth():
-	logger.info('PPE is too close to the moon. Increasing velocity.')
-
 def routine(subsystems):
 	comms,gnc,power,prop = subsystems
-	logger.info('Routine')
-
-def insertionBurn():
-	logger.info('Insertion burn')
-
-def visitingVehicle():
-	logger.info('Visiting vehicle')
+	
 
 def eclipse(power):
 	logger.info('Entering eclipse')
 	power.eclipse()
-
 
 def subsystemFail(subsystem):
 	if subsystem.name[-1] == 'A':

@@ -48,25 +48,24 @@ def calculateDistance(subsystems,new_distance): #do linspace instead
 def main():
 	initiateLogger()
 	comms,gnc,power,prop = bootSequence()
-	subsystems = [comms,gnc,power,prop]
+	subsystems = [comms,gnc,power]
 	runReports(subsystems)
 	mission_time=0 #hrs
 	distances = np.linspace(356873,426452,22)
-	random_scenarios = [missionScenarios.visitingVehicle, missionScenarios.eclipse(power)]
 	comms.getSignalStrength()
 	exit()
 	i = 0
+	prop.MainPropOn()
+
 	while(True):
-		if mission_time%10 == 0:
-			runReports(subsystems)
-		elif mission_time%15 == 0:
+		runReports(subsystems)
+		if mission_time%15 == 0:
 			chance = np.random.randint(0,101)
 			broken_subsystem = subsystems[np.random.randint(0,4)]
 			if chance > 70: missionScenarios.subsystemFail(broken_subsystem)
-		elif mission_time%30 == 0:
-			chance = np.random.randint(0,11)
-			if chance > 9: np.random.choice(random_scenarios)
-		# else: missionScenarios.routine()
+		else: missionScenarios.routine()
+		if i == 20:
+			missionScenarios.eclipse(power)
 		new_distance = distances[i]
 		calculateDistance(subsystems,new_distance)
 		power.calculateAvailablePower(subsystems)
@@ -83,13 +82,3 @@ def main():
 
 if __name__ == '__main__':
 	main()
-
-	#set wait for 1 second for gnc
-	#need to make backup flight computers
-
-
-	#if dist from earth > x
-		#fire prop
-
-
-		#need to make backup computers

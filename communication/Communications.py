@@ -1,6 +1,6 @@
 #import pylink
 import logging
-import communication.getLinkBudget
+from communication import getLinkBudget
 logger = logging.getLogger(__name__)
 
 class Communications():
@@ -28,7 +28,7 @@ class Communications():
 		print('Got message')
 
 	def getSignalStrength(self):
-		communication.getLinkBudget
+		getLinkBudget.main()
 		print('Forward signal strength = {} Mbps'.format(self.signal_strength_forward))
 		print('Return signal strength = {} Mbps'.format(self.signal_strength_return))
 
