@@ -97,76 +97,90 @@ class GNC:
         alpha = (self.thrustMag * self.CoM_to_thruster) / np.linalg.norm(self.MomDiag)# this is the ang acc imposed by each thruster. for our purposes, alpha = omega
 
         ### positive roll maneuver ###
-        while self.omega_vec[0] < 5 * self.base_slew_rate: # yeah this is kinda arbitrary
-            self.omega_vec[0] = self.omega_vec[0] + (alpha * len(self.pos_roll)) # in rad, based off 0.1 deg/s, also arbitrary
+        if self.omega_vec[0] < 5 * self.base_slew_rate:
             for i in range(len(self.pos_roll)):
-                self.thrustersOn[self.pos_roll[i]-1] = 1 # minus one to fix index (there is no "zero" thruster)
-                logger.info('Thruster {} on'.format(self.thrustersOn[self.pos_roll[i]-1]))
-        for k in range(len(self.pos_roll)):
-            self.thrustersOn[self.pos_roll[k]-1] = 0
-            logger.info('Thruster {} off'.format(self.thrustersOn[self.pos_roll[k]-1]))
+                if self.thrustersOn[self.pos_roll[i]-1] < 1:
+                    self.thrustersOn[self.pos_roll[i]-1] = 1 # minus one to fix index (there is no "zero" thruster)
+                    logger.info('Thruster {} is on' .format(self.pos_roll[i]-1))
+
+        while self.omega_vec[0] < 5 * self.base_slew_rate:
+            self.omega_vec[0] = self.omega_vec[0] + (alpha * len(self.pos_roll)) # in rad, based off 0.1 deg/s, also arbitrary
+
+
 
         ### negative roll maneuver ###
-        while self.omega_vec[0] > 5 * self.base_slew_rate: # yeah this is kinda arbitrary
-            self.omega_vec[0] = self.omega_vec[0] - (alpha * len(self.neg_roll)) # in rad, based off 0.1 deg/s, also arbitrary
+        if self.omega_vec[0] > 5 * self.base_slew_rate:
             for i in range(len(self.neg_roll)):
-                self.thrustersOn[self.neg_roll[i]-1] = 1 # minus one to fix index (there is no "zero" thruster)
-                logger.info('Thruster {} on'.format(self.thrustersOn[self.neg_roll[i]-1]))
-        for k in range(len(self.neg_roll)):
-            self.thrustersOn[self.neg_roll[k]-1] = 0
-            logger.info('Thruster {} off'.format(self.thrustersOn[self.neg_roll[k]-1]))
+                if self.thrustersOn[self.neg_roll[i]-1] < 1:
+                    self.thrustersOn[self.neg_roll[i]-1] = 1 # minus one to fix index (there is no "zero" thruster)
+                    logger.info('Thruster {} is on' .format(self.neg_roll[i]-1))
+        while self.omega_vec[0] > 5 * self.base_slew_rate:
+            self.omega_vec[0] = self.omega_vec[0] - (alpha * len(self.neg_roll)) # in rad, based off 0.1 deg/s, also arbitrary
+
+
 
         ### positive pitch maneuver ###
-        while self.omega_vec[1] < 5 * self.base_slew_rate: # yeah this is kinda arbitrary
-            self.omega_vec[1] = self.omega_vec[1] + (alpha * len(self.pos_pitch)) # in rad, based off 0.1 deg/s, also arbitrary
+        if self.omega_vec[1] < 5 * self.base_slew_rate:
             for i in range(len(self.pos_pitch)):
-                self.thrustersOn[self.pos_pitch[i]-1] = 1 # minus one to fix index (there is no "zero" thruster)
-                logger.info('Thruster {} on'.format(self.thrustersOn[self.pos_pitch[i]-1]))
-        for k in range(len(self.pos_pitch)):
-            self.thrustersOn[self.pos_pitch[k]-1] = 0
-            logger.info('Thruster {} off'.format(self.thrustersOn[self.pos_pitch[k]-1]))
+                if self.thrustersOn[self.pos_pitch[i]-1] < 1:
+                    self.thrustersOn[self.pos_pitch[i]-1] = 1 # minus one to fix index (there is no "zero" thruster)
+                    logger.info('Thruster {} is on' .format(self.pos_pitch[i]-1))
+
+        while self.omega_vec[1] < 5 * self.base_slew_rate:
+            self.omega_vec[1] = self.omega_vec[1] + (alpha * len(self.pos_pitch)) # in rad, based off 0.1 deg/s, also arbitrary
+
+
 
         ### negative pitch maneuver ###
-        while self.omega_vec[1] > 5 * self.base_slew_rate:  # yeah this is kinda arbitrary
-            self.omega_vec[1] = self.omega_vec[1] - (alpha * len(self.neg_pitch))  # in rad, based off 0.1 deg/s, also arbitrary
+        if self.omega_vec[1] > 5 * self.base_slew_rate:
             for i in range(len(self.neg_pitch)):
-                self.thrustersOn[self.neg_pitch[i]-1] = 1  # minus one to fix index (there is no "zero" thruster)
-                logger.info('Thruster {} on'.format(self.thrustersOn[self.neg_pitch[i]-1]))
-        for k in range(len(self.neg_pitch)):
-            self.thrustersOn[self.neg_pitch[k]-1] = 0
-            logger.info('Thruster {} off'.format(self.thrustersOn[self.neg_pitch[k]-1]))
+                if self.thrustersOn[self.neg_pitch[i]-1] < 1:
+                    self.thrustersOn[self.neg_pitch[i]-1] = 1  # minus one to fix index (there is no "zero" thruster)
+                    logger.info('Thruster {} is on'.format(self.neg_pitch[i] - 1))
+
+        while self.omega_vec[1] > 5 * self.base_slew_rate:
+            self.omega_vec[1] = self.omega_vec[1] - (alpha * len(self.neg_pitch))  # in rad, based off 0.1 deg/s, also arbitrary
+
+
+
 
         ### positive yaw maneuver ###
-        while self.omega_vec[2] < 5 * self.base_slew_rate:  # yeah this is kinda arbitrary
-            self.omega_vec[2] = self.omega_vec[2] + (alpha * len(self.pos_yaw))  # in rad, based off 0.1 deg/s, also arbitrary
+        if self.omega_vec[2] < 5 * self.base_slew_rate:
             for i in range(len(self.pos_yaw)):
-                self.thrustersOn[self.pos_yaw[i] - 1] = 1  # minus one to fix index (there is no "zero" thruster)
-                logger.info('Thruster {} on'.format(self.thrustersOn[self.pos_yaw[i]-1]))
-        for k in range(len(self.pos_yaw)):
-            self.thrustersOn[self.pos_yaw[k]-1] = 0
-            logger.info('Thruster {} off'.format(self.thrustersOn[self.pos_yaw[k]-1]))
+                if self.thrustersOn[self.pos_yaw[i] - 1] == 0:
+                    self.thrustersOn[self.pos_yaw[i] - 1] = 1  # minus one to fix index (there is no "zero" thruster)
+                    logger.info('Thruster {} is on'.format(self.pos_yaw[i] - 1))
+
+        while self.omega_vec[2] < 5 * self.base_slew_rate:
+            self.omega_vec[2] = self.omega_vec[2] + (alpha * len(self.pos_yaw))  # in rad, based off 0.1 deg/s, also arbitrary
+
+
 
         ### negative yaw maneuver ###
-        while self.omega_vec[2] > 5 * self.base_slew_rate:  # yeah this is kinda arbitrary
-            self.omega_vec[2] = self.omega_vec[2] - (alpha * len(self.neg_yaw))  # in rad, based off 0.1 deg/s, also arbitrary
+        if self.omega_vec[2] > 5 * self.base_slew_rate:
             for i in range(len(self.neg_yaw)):
-                self.thrustersOn[self.neg_yaw[i] - 1] = 1  # minus one to fix index (there is no "zero" thruster)
-                logger.info('Thruster {} on'.format(self.thrustersOn[self.neg_yaw[i]-1]))
-        for k in range(len(self.neg_yaw)):
-            self.thrustersOn[self.neg_yaw[k]-1] = 0
-            logger.info('Thruster {} off'.format(self.thrustersOn[self.neg_yaw[k]-1]))
+                if self.thrustersOn[self.neg_yaw[i] - 1] == 0:
+                    self.thrustersOn[self.neg_yaw[i] - 1] = 1  # minus one to fix index (there is no "zero" thruster)
+                    logger.info('Thruster {} is on'.format(self.neg_yaw[i] - 1))
+
+        while self.omega_vec[2] > 5 * self.base_slew_rate:
+            self.omega_vec[2] = self.omega_vec[2] - (alpha * len(self.neg_yaw))  # in rad, based off 0.1 deg/s, also arbitrary
+
+        for j in range(len(self.thrustersOn)):
+            self.thrustersOn[j] = 0
             
 
 
     def CmgWheel(self):
-        self.powerOn() # call the power function
-        self.RandPerturbation() # call the perturbation function to set rand_perb
-        for i in range(len(self.omega_vec)):
-            self.omega_vec[i] = self.omega_vec[i] + self.base_slew_rate # add an average slew rate each second
-            self.omega_vec[i] = self.omega_vec[i] + self.rand_vec[i] # add a random perturbation each second
-            self.lin_mom_vec[i] = self.MomDiag[i]*self.omega_vec[i]
-        if np.linalg.norm(self.lin_mom_vec) > self.mom_capacity:
-            self.DesatOMM()
+        for j in range(10):
+            self.powerOn() # call the power function
+            self.RandPerturbation() # call the perturbation function to set rand_perb
+            for i in range(len(self.omega_vec)):
+                self.omega_vec[i] = self.omega_vec[i] + self.base_slew_rate # add an average slew rate each second
+                self.omega_vec[i] = self.omega_vec[i] + self.rand_vec[i] # add a random perturbation each second
+                self.lin_mom_vec[i] = self.MomDiag[i]*self.omega_vec[i]
+            if np.linalg.norm(self.lin_mom_vec) > self.mom_capacity:
+                self.DesatOMM()
 
 # getters
 
