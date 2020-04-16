@@ -10,6 +10,7 @@ __pycache__/
 
 
 export/
+logs/ppe.log
 
 #mac os
 .DS_Store

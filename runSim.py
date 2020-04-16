@@ -53,11 +53,7 @@ def main():
 	runReports(subsystems)
 	mission_time=0 #hrs
 	distances = np.linspace(356873,426452,22)
-<<<<<<< HEAD
-	exit()
-=======
-	comms.getSignalStrength()
->>>>>>> 348bab8d27868516f9300127cf17ae4f600f9814
+
 	i = 0
 
 	while(True):
