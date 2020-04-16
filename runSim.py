@@ -32,6 +32,7 @@ def bootSequence():
 
 	power.powerOn()
 	prop.MainPropOn()
+	#gnc.CmgWheel() for debugging
 	comms.powerOn()
 	gnc.powerOn()
 	
@@ -54,7 +55,6 @@ def main():
 	distances = np.linspace(356873,426452,22)
 	comms.getSignalStrength()
 	i = 0
-	prop.MainPropOn()
 
 	while(True):
 		runReports(subsystems)
