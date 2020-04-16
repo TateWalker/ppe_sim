@@ -8,7 +8,7 @@ from communication import linkBudgetConstants
 
 def main():
   m = linkBudgetConstants.DOWNLINK
-
+  return m.max_bitrate_hz*m.allocation_hz
   # The same here with 'e' instead of 'enum'...'e' also doesn't
   # collide with the 'enum' package name.
   e = m.enum

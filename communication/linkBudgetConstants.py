@@ -90,9 +90,9 @@ rx_interconnect = pylink.Interconnect(is_rx=True)
 tx_interconnect = pylink.Interconnect(is_rx=False)
 
 
-ka_channel = pylink.Channel(bitrate_hz=1e6,
-                           allocation_hz=500e4,
-                           center_freq_mhz=26000,
+ka_channel = pylink.Channel(bitrate_hz=.072,
+                           allocation_hz=500e6,
+                           center_freq_mhz=32550,
                            atmospheric_loss_db=1,
                            ionospheric_loss_db=1,
                            rain_loss_db=2,

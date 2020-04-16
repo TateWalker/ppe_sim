@@ -1,6 +1,7 @@
 #import pylink
 import logging
 from communication import getLinkBudget
+from communication import linkBudgetConstants
 logger = logging.getLogger(__name__)
 
 class Communications():
@@ -27,8 +28,14 @@ class Communications():
 	def getMessage(self): #read from queue
 		print('Got message')
 
-	def getSignalStrength(self):
+	def getFinalReport(self):
 		getLinkBudget.main()
+
+	def getSignalStrength(self):
+		m = linkBudgetConstants.DOWNLINK
+  		self.signal_strength_forward = m.max_bitrate_hz*m.allocation_hz*1e6
+  		e = linkBudgetConstants.UPLINK
+  		self.signal_strength_return = e.max_bitrate_hz*e.allocation_hz*1e6
 		print('Forward signal strength = {} Mbps'.format(self.signal_strength_forward))
 		print('Return signal strength = {} Mbps'.format(self.signal_strength_return))
 

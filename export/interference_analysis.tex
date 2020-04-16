@@ -90,21 +90,21 @@ EIRP & 53.00 & $dBW$ \\
   \begin{tabular}{p{3in}p{1in}l}
 \textbf{Constants} & & \\
 \hline \\
-Center Frequency & 26.00 & $GHz$ \\
+Center Frequency & 32.55 & $GHz$ \\
 Speed of Light & 299792458 & $m/s$ \\
-Allocated Bandwidth & 5.00 & $MHz$ \\
-Start of Allocation & 26.00 & $GHz$ \\
-End of Allocation & 26.00 & $GHz$ \\
-Wavelength & 1.15 & $cm$ \\
+Allocated Bandwidth & 500.00 & $MHz$ \\
+Start of Allocation & 32.30 & $GHz$ \\
+End of Allocation & 32.80 & $GHz$ \\
+Wavelength & 9.21 & $mm$ \\
 \\
 \textbf{Losses} & & \\
 \hline \\
-Unity Gain Propagation Loss & 232.70 & $dB$ \\
+Unity Gain Propagation Loss & 234.65 & $dB$ \\
 Atmospheric Loss & 1 & $dB$ \\
 Ionospheric Loss & 1 & $dB$ \\
 Rain Loss & 2 & $dB$ \\
 Multipath Fading Loss & 0 & $dB$ \\
-Total Channel Loss & 236.70 & $dB$ \\
+Total Channel Loss & 238.65 & $dB$ \\
 \\
 \textbf{Modulation (DVB-S2X)} & & \\
 \hline \\
@@ -194,38 +194,11 @@ Peak PFD at GSO per 1MHz & -132.29 & $dBW/m^2/1MHz$ \\
 \textbf{Hey Regulators, Look In this Section} & & \\
 \hline \\
 Lowest Permissible PFD (4kHz BW) at Receiver & -150 & $dBW/m^2$ \\
-Peak Possible PFD (4kHz BW) at Receiver & -160.01 & $dBW/m^2$ \\
+Peak Possible PFD (4kHz BW) at Receiver & -180.01 & $dBW/m^2$ \\
 \\
 \end{tabular}
 
   
-  \begin{figure}
-    \caption{Peak PFD at Earth Station assuming full BW utilization}
-    \includegraphics[width=\linewidth]{./pfd-canonical-4kHz.png}
-    \label{fig::pfd::pfd-canonical-4kHz}
-  \end{figure}
-        
-
-  \begin{figure}
-    \caption{Expected PFD at Earth Station under normal operations}
-    \includegraphics[width=\linewidth]{./pfd-expected-4kHz.png}
-    \label{fig::pfd::pfd-expected-4kHz}
-  \end{figure}
-        
-
-  \begin{figure}
-    \caption{Peak PFD at Surface vs Bandwidth}
-    \includegraphics[width=\linewidth]{./pfd-rx_1000-5000.png}
-    \label{fig::pfd::rx_1000-5000}
-  \end{figure}
-        
-
-  \begin{figure}
-    \caption{Peak PFD at GSO vs Bandwidth}
-    \includegraphics[width=\linewidth]{./pfd-gso_1000-5000.png}
-    \label{fig::pfd::gso_1000-5000}
-  \end{figure}
-        
 \end{center}
 
 
@@ -265,38 +238,38 @@ EIRP & 53.00 & $dBW$ \\
 \\
 \textbf{Channel} & & \\
 \hline \\
-Center Frequency & 26.00 & $GHz$ \\
-Free Space Loss & 232.70 & $dB$ \\
-Total Channel Loss & 236.70 & $dB$ \\
+Center Frequency & 32.55 & $GHz$ \\
+Free Space Loss & 234.65 & $dB$ \\
+Total Channel Loss & 238.65 & $dB$ \\
 Occupied Bandwidth & 63.43 & $dBHz$ \\
 \\
 \textbf{Receiver (Ground Ka-Band Receiver)} & & \\
 \hline \\
 Signal Power Flux at RX Antenna & -133.94 & $dBW/m^2$ \\
 Antenna Gain & 48.00 & $dBi$ \\
-Antenna Effective Area & -1.76 & $dBm^2$ \\
+Antenna Effective Area & -3.71 & $dBm^2$ \\
 Polarization Mismatch Loss & 3 & $dB$ \\
 RX System Noise Temperature & 666.84 & $K$ \\
 RX Figure of Merit ($G/T$) & 19.76 & $dB/K$ \\
 Noise Spectral Density ($N_0$) & -200.36 & $dBW/Hz$ \\
-Received Signal Power & -138.70 & $dBW$ \\
+Received Signal Power & -140.65 & $dBW$ \\
 Excess Noise BW Loss & 0.00 & $dB$ \\
 Implementation Loss & 0 & $dB$ \\
 Required Demodulation $E_b/N_0$ & 0.43 & $dB$ \\
 Antenna Pointing Loss & 0 & $dB$ \\
-Carrier to Noise ($C/N_0$) & 61.66 & $dBHz$ \\
+Carrier to Noise ($C/N_0$) & 59.71 & $dBHz$ \\
 \\
 \textbf{Eb/N0} & & \\
 \hline \\
 BitRate & 60.00 & $dBHz$ \\
-Energy per Bit ($E_b$) & -198.70 & $dBW/Hz$ \\
-Received $E_b/N_0$ & 1.66 & $dB$ \\
+Energy per Bit ($E_b$) & -200.65 & $dBW/Hz$ \\
+Received $E_b/N_0$ & -0.29 & $dB$ \\
 Required $E_b/N_0$ & 0.43 & $dB$ \\
 \\
 \textbf{Key Outputs} & & \\
 \hline \\
 Bitrate & 1.00 & $MHz$ \\
-Link Margin & 1.23 & $dB$ \\
+Link Margin & -0.72 & $dB$ \\
 \\
 \end{tabular}
 
