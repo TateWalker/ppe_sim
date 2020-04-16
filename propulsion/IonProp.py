@@ -48,7 +48,8 @@ class IonProp:
         while self.powered_on:
             self.kgIonized()
             self.FireMainProp()
-            self.getReport()
+            if self.hours % 10 == 0:
+                self.getReport()
             if 356870 - self.distance <= 0:
                 self.powered_on = False
                 logger.info('\n Arrived at NRHO orbit')
