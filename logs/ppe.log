@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 23:59:54 root                           INFO     Logger initiated
 23:59:54 power.Power                    INFO     Power on
 23:59:54 power.Power                    INFO     415.5 kWh available
@@ -6301,3 +6302,1303 @@ Ion propulsion on
 23:59:56 power.Power                    INFO     Power A powered on: True
 23:59:56 power.Power                    INFO     Power usage: 0kWh
 23:59:56 power.Power                    INFO     Generating power: True
+=======
+00:19:02 root                           INFO     Logger initiated
+00:19:02 power.Power                    INFO     Power on
+00:19:02 power.Power                    INFO     415.5 kWh available
+00:19:02 propulsion.IonProp             INFO     
+Ion propulsion on
+00:19:02 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:02 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:02 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00165503] kg/s
+00:19:02 propulsion.IonProp             INFO     Current Delta V: [60.25458073] km/hr
+00:19:02 propulsion.IonProp             INFO     Distance to Moon: [353737.45696396]
+00:19:02 propulsion.IonProp             INFO     Time in Transit: 50 hours
+00:19:02 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:02 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:02 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:02 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00176175] kg/s
+00:19:02 propulsion.IonProp             INFO     Current Delta V: [64.14158782] km/hr
+00:19:02 propulsion.IonProp             INFO     Distance to Moon: [350580.85243165]
+00:19:02 propulsion.IonProp             INFO     Time in Transit: 100 hours
+00:19:02 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:02 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:02 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:02 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00171801] kg/s
+00:19:02 propulsion.IonProp             INFO     Current Delta V: [62.54825644] km/hr
+00:19:02 propulsion.IonProp             INFO     Distance to Moon: [347458.36637412]
+00:19:02 propulsion.IonProp             INFO     Time in Transit: 150 hours
+00:19:02 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:02 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:02 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:02 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00163563] kg/s
+00:19:02 propulsion.IonProp             INFO     Current Delta V: [59.54801794] km/hr
+00:19:02 propulsion.IonProp             INFO     Distance to Moon: [344336.04997369]
+00:19:02 propulsion.IonProp             INFO     Time in Transit: 200 hours
+00:19:02 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:02 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:02 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:02 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00177609] kg/s
+00:19:02 propulsion.IonProp             INFO     Current Delta V: [64.66375545] km/hr
+00:19:03 propulsion.IonProp             INFO     Distance to Moon: [341204.76690121]
+00:19:03 propulsion.IonProp             INFO     Time in Transit: 250 hours
+00:19:03 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:03 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:03 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:03 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00163998] kg/s
+00:19:03 propulsion.IonProp             INFO     Current Delta V: [59.7061286] km/hr
+00:19:03 propulsion.IonProp             INFO     Distance to Moon: [338077.75013255]
+00:19:03 propulsion.IonProp             INFO     Time in Transit: 300 hours
+00:19:03 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:03 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:03 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:03 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00170319] kg/s
+00:19:03 propulsion.IonProp             INFO     Current Delta V: [62.008548] km/hr
+00:19:03 propulsion.IonProp             INFO     Distance to Moon: [334926.80370821]
+00:19:03 propulsion.IonProp             INFO     Time in Transit: 350 hours
+00:19:03 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:03 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:03 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:03 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00169244] kg/s
+00:19:03 propulsion.IonProp             INFO     Current Delta V: [61.61679226] km/hr
+00:19:03 propulsion.IonProp             INFO     Distance to Moon: [331775.24994212]
+00:19:03 propulsion.IonProp             INFO     Time in Transit: 400 hours
+00:19:03 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:03 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:03 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:03 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.0016529] kg/s
+00:19:03 propulsion.IonProp             INFO     Current Delta V: [60.17668722] km/hr
+00:19:03 propulsion.IonProp             INFO     Distance to Moon: [328671.34493716]
+00:19:03 propulsion.IonProp             INFO     Time in Transit: 450 hours
+00:19:03 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:03 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:03 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:03 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00181697] kg/s
+00:19:03 propulsion.IonProp             INFO     Current Delta V: [66.15262754] km/hr
+00:19:03 propulsion.IonProp             INFO     Distance to Moon: [325545.98592108]
+00:19:03 propulsion.IonProp             INFO     Time in Transit: 500 hours
+00:19:03 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:03 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:03 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:03 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00166199] kg/s
+00:19:03 propulsion.IonProp             INFO     Current Delta V: [60.50791431] km/hr
+00:19:03 propulsion.IonProp             INFO     Distance to Moon: [322393.80347966]
+00:19:03 propulsion.IonProp             INFO     Time in Transit: 550 hours
+00:19:03 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:03 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:04 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:04 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.0016472] kg/s
+00:19:04 propulsion.IonProp             INFO     Current Delta V: [59.96918271] km/hr
+00:19:04 propulsion.IonProp             INFO     Distance to Moon: [319261.77884867]
+00:19:04 propulsion.IonProp             INFO     Time in Transit: 600 hours
+00:19:04 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:04 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:04 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:04 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00168215] kg/s
+00:19:04 propulsion.IonProp             INFO     Current Delta V: [61.24233517] km/hr
+00:19:04 propulsion.IonProp             INFO     Distance to Moon: [316127.745993]
+00:19:04 propulsion.IonProp             INFO     Time in Transit: 650 hours
+00:19:04 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:04 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:04 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:04 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00178129] kg/s
+00:19:04 propulsion.IonProp             INFO     Current Delta V: [64.85305841] km/hr
+00:19:04 propulsion.IonProp             INFO     Distance to Moon: [313008.87375574]
+00:19:04 propulsion.IonProp             INFO     Time in Transit: 700 hours
+00:19:04 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:04 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:04 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:04 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00162628] kg/s
+00:19:04 propulsion.IonProp             INFO     Current Delta V: [59.2073587] km/hr
+00:19:04 propulsion.IonProp             INFO     Distance to Moon: [309904.0082936]
+00:19:04 propulsion.IonProp             INFO     Time in Transit: 750 hours
+00:19:04 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:04 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:04 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:04 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00170443] kg/s
+00:19:04 propulsion.IonProp             INFO     Current Delta V: [62.05367283] km/hr
+00:19:04 propulsion.IonProp             INFO     Distance to Moon: [306798.98043858]
+00:19:04 propulsion.IonProp             INFO     Time in Transit: 800 hours
+00:19:04 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:04 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:04 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:04 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00162067] kg/s
+00:19:04 propulsion.IonProp             INFO     Current Delta V: [59.00298085] km/hr
+00:19:04 propulsion.IonProp             INFO     Distance to Moon: [303694.09499956]
+00:19:04 propulsion.IonProp             INFO     Time in Transit: 850 hours
+00:19:04 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:04 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:04 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:04 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00170433] kg/s
+00:19:04 propulsion.IonProp             INFO     Current Delta V: [62.04985449] km/hr
+00:19:04 propulsion.IonProp             INFO     Distance to Moon: [300536.80980559]
+00:19:04 propulsion.IonProp             INFO     Time in Transit: 900 hours
+00:19:05 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:05 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:05 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:05 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00175316] kg/s
+00:19:05 propulsion.IonProp             INFO     Current Delta V: [63.82863602] km/hr
+00:19:05 propulsion.IonProp             INFO     Distance to Moon: [297405.59453492]
+00:19:05 propulsion.IonProp             INFO     Time in Transit: 950 hours
+00:19:05 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:05 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:05 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:05 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.001743] kg/s
+00:19:05 propulsion.IonProp             INFO     Current Delta V: [63.45842637] km/hr
+00:19:05 propulsion.IonProp             INFO     Distance to Moon: [294240.80149833]
+00:19:05 propulsion.IonProp             INFO     Time in Transit: 1000 hours
+00:19:05 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:05 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:05 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:05 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00172472] kg/s
+00:19:05 propulsion.IonProp             INFO     Current Delta V: [62.79281442] km/hr
+00:19:05 propulsion.IonProp             INFO     Distance to Moon: [291115.71897206]
+00:19:05 propulsion.IonProp             INFO     Time in Transit: 1050 hours
+00:19:05 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:05 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:05 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:05 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00175459] kg/s
+00:19:05 propulsion.IonProp             INFO     Current Delta V: [63.88079892] km/hr
+00:19:05 propulsion.IonProp             INFO     Distance to Moon: [287997.21794372]
+00:19:05 propulsion.IonProp             INFO     Time in Transit: 1100 hours
+00:19:05 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:05 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:05 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:05 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00174688] kg/s
+00:19:05 propulsion.IonProp             INFO     Current Delta V: [63.5999396] km/hr
+00:19:05 propulsion.IonProp             INFO     Distance to Moon: [284847.44625445]
+00:19:05 propulsion.IonProp             INFO     Time in Transit: 1150 hours
+00:19:05 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:05 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:05 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:05 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00169876] kg/s
+00:19:05 propulsion.IonProp             INFO     Current Delta V: [61.84728145] km/hr
+00:19:05 propulsion.IonProp             INFO     Distance to Moon: [281711.64501648]
+00:19:05 propulsion.IonProp             INFO     Time in Transit: 1200 hours
+00:19:05 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:05 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:05 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:05 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00182171] kg/s
+00:19:05 propulsion.IonProp             INFO     Current Delta V: [66.32522009] km/hr
+00:19:06 propulsion.IonProp             INFO     Distance to Moon: [278562.87150644]
+00:19:06 propulsion.IonProp             INFO     Time in Transit: 1250 hours
+00:19:06 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:06 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:06 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:06 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00175093] kg/s
+00:19:06 propulsion.IonProp             INFO     Current Delta V: [63.74721355] km/hr
+00:19:06 propulsion.IonProp             INFO     Distance to Moon: [275451.29070911]
+00:19:06 propulsion.IonProp             INFO     Time in Transit: 1300 hours
+00:19:06 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:06 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:06 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:06 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00165648] kg/s
+00:19:06 propulsion.IonProp             INFO     Current Delta V: [60.30724919] km/hr
+00:19:06 propulsion.IonProp             INFO     Distance to Moon: [272348.70199529]
+00:19:06 propulsion.IonProp             INFO     Time in Transit: 1350 hours
+00:19:06 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:06 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:06 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:06 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00161505] kg/s
+00:19:06 propulsion.IonProp             INFO     Current Delta V: [58.79818728] km/hr
+00:19:06 propulsion.IonProp             INFO     Distance to Moon: [269212.16222629]
+00:19:06 propulsion.IonProp             INFO     Time in Transit: 1400 hours
+00:19:06 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:06 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:06 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:06 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00170131] kg/s
+00:19:06 propulsion.IonProp             INFO     Current Delta V: [61.9399966] km/hr
+00:19:06 propulsion.IonProp             INFO     Distance to Moon: [266083.00760246]
+00:19:06 propulsion.IonProp             INFO     Time in Transit: 1450 hours
+00:19:06 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:06 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:06 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:06 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00174171] kg/s
+00:19:06 propulsion.IonProp             INFO     Current Delta V: [63.41143429] km/hr
+00:19:06 propulsion.IonProp             INFO     Distance to Moon: [262921.92916439]
+00:19:06 propulsion.IonProp             INFO     Time in Transit: 1500 hours
+00:19:06 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:06 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:06 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:06 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.0016376] kg/s
+00:19:06 propulsion.IonProp             INFO     Current Delta V: [59.61960141] km/hr
+00:19:06 propulsion.IonProp             INFO     Distance to Moon: [259779.81714132]
+00:19:06 propulsion.IonProp             INFO     Time in Transit: 1550 hours
+00:19:06 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:06 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:07 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:07 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.0016914] kg/s
+00:19:07 propulsion.IonProp             INFO     Current Delta V: [61.57897743] km/hr
+00:19:07 propulsion.IonProp             INFO     Distance to Moon: [256672.68976856]
+00:19:07 propulsion.IonProp             INFO     Time in Transit: 1600 hours
+00:19:07 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:07 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:07 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:07 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.0018156] kg/s
+00:19:07 propulsion.IonProp             INFO     Current Delta V: [66.10296893] km/hr
+00:19:07 propulsion.IonProp             INFO     Distance to Moon: [253523.63268338]
+00:19:07 propulsion.IonProp             INFO     Time in Transit: 1650 hours
+00:19:07 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:07 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:07 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:07 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00170104] kg/s
+00:19:07 propulsion.IonProp             INFO     Current Delta V: [61.93035051] km/hr
+00:19:07 propulsion.IonProp             INFO     Distance to Moon: [250403.95161225]
+00:19:07 propulsion.IonProp             INFO     Time in Transit: 1700 hours
+00:19:07 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:07 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:07 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:07 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00165307] kg/s
+00:19:07 propulsion.IonProp             INFO     Current Delta V: [60.18286843] km/hr
+00:19:07 propulsion.IonProp             INFO     Distance to Moon: [247267.79980808]
+00:19:07 propulsion.IonProp             INFO     Time in Transit: 1750 hours
+00:19:07 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:07 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:07 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:07 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00162783] kg/s
+00:19:07 propulsion.IonProp             INFO     Current Delta V: [59.26387949] km/hr
+00:19:07 propulsion.IonProp             INFO     Distance to Moon: [244149.84612779]
+00:19:07 propulsion.IonProp             INFO     Time in Transit: 1800 hours
+00:19:07 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:07 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:07 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:07 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.0016783] kg/s
+00:19:07 propulsion.IonProp             INFO     Current Delta V: [61.10205186] km/hr
+00:19:07 propulsion.IonProp             INFO     Distance to Moon: [241022.43173951]
+00:19:07 propulsion.IonProp             INFO     Time in Transit: 1850 hours
+00:19:07 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:07 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:07 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:07 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00181953] kg/s
+00:19:07 propulsion.IonProp             INFO     Current Delta V: [66.24608454] km/hr
+00:19:07 propulsion.IonProp             INFO     Distance to Moon: [237878.42794197]
+00:19:07 propulsion.IonProp             INFO     Time in Transit: 1900 hours
+00:19:08 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:08 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:08 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:08 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00172705] kg/s
+00:19:08 propulsion.IonProp             INFO     Current Delta V: [62.87757253] km/hr
+00:19:08 propulsion.IonProp             INFO     Distance to Moon: [234715.73156504]
+00:19:08 propulsion.IonProp             INFO     Time in Transit: 1950 hours
+00:19:08 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:08 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:08 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:08 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00172391] kg/s
+00:19:08 propulsion.IonProp             INFO     Current Delta V: [62.76334344] km/hr
+00:19:08 propulsion.IonProp             INFO     Distance to Moon: [231574.97253509]
+00:19:08 propulsion.IonProp             INFO     Time in Transit: 2000 hours
+00:19:08 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:08 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:08 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:08 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00169962] kg/s
+00:19:08 propulsion.IonProp             INFO     Current Delta V: [61.87843308] km/hr
+00:19:08 propulsion.IonProp             INFO     Distance to Moon: [228469.65194283]
+00:19:08 propulsion.IonProp             INFO     Time in Transit: 2050 hours
+00:19:08 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:08 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:08 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:08 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.0017786] kg/s
+00:19:08 propulsion.IonProp             INFO     Current Delta V: [64.75499684] km/hr
+00:19:08 propulsion.IonProp             INFO     Distance to Moon: [225339.52119141]
+00:19:08 propulsion.IonProp             INFO     Time in Transit: 2100 hours
+00:19:08 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:08 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:08 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:08 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00170751] kg/s
+00:19:08 propulsion.IonProp             INFO     Current Delta V: [62.16592212] km/hr
+00:19:08 propulsion.IonProp             INFO     Distance to Moon: [222223.8702117]
+00:19:08 propulsion.IonProp             INFO     Time in Transit: 2150 hours
+00:19:08 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:08 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:08 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:08 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00162219] kg/s
+00:19:08 propulsion.IonProp             INFO     Current Delta V: [59.05817519] km/hr
+00:19:08 propulsion.IonProp             INFO     Distance to Moon: [219098.42644524]
+00:19:08 propulsion.IonProp             INFO     Time in Transit: 2200 hours
+00:19:08 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:08 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:08 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:08 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00165338] kg/s
+00:19:09 propulsion.IonProp             INFO     Current Delta V: [60.19430485] km/hr
+00:19:09 propulsion.IonProp             INFO     Distance to Moon: [215988.1271313]
+00:19:09 propulsion.IonProp             INFO     Time in Transit: 2250 hours
+00:19:09 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:09 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:09 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:09 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00167832] kg/s
+00:19:09 propulsion.IonProp             INFO     Current Delta V: [61.10269653] km/hr
+00:19:09 propulsion.IonProp             INFO     Distance to Moon: [212881.55220943]
+00:19:09 propulsion.IonProp             INFO     Time in Transit: 2300 hours
+00:19:09 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:09 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:09 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:09 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00180202] kg/s
+00:19:09 propulsion.IonProp             INFO     Current Delta V: [65.60828521] km/hr
+00:19:09 propulsion.IonProp             INFO     Distance to Moon: [209777.85064177]
+00:19:09 propulsion.IonProp             INFO     Time in Transit: 2350 hours
+00:19:09 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:09 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:09 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:09 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00182237] kg/s
+00:19:09 propulsion.IonProp             INFO     Current Delta V: [66.34954227] km/hr
+00:19:09 propulsion.IonProp             INFO     Distance to Moon: [206637.82627706]
+00:19:09 propulsion.IonProp             INFO     Time in Transit: 2400 hours
+00:19:09 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:09 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:09 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:09 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00167367] kg/s
+00:19:09 propulsion.IonProp             INFO     Current Delta V: [60.9332867] km/hr
+00:19:09 propulsion.IonProp             INFO     Distance to Moon: [203519.20861137]
+00:19:09 propulsion.IonProp             INFO     Time in Transit: 2450 hours
+00:19:09 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:09 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:09 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:09 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.0017821] kg/s
+00:19:09 propulsion.IonProp             INFO     Current Delta V: [64.88276564] km/hr
+00:19:09 propulsion.IonProp             INFO     Distance to Moon: [200383.55593119]
+00:19:09 propulsion.IonProp             INFO     Time in Transit: 2500 hours
+00:19:09 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:09 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:09 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:09 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00173745] kg/s
+00:19:09 propulsion.IonProp             INFO     Current Delta V: [63.25647996] km/hr
+00:19:09 propulsion.IonProp             INFO     Distance to Moon: [197282.03838027]
+00:19:09 propulsion.IonProp             INFO     Time in Transit: 2550 hours
+00:19:09 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:09 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:09 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:10 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00175309] kg/s
+00:19:10 propulsion.IonProp             INFO     Current Delta V: [63.82616231] km/hr
+00:19:10 propulsion.IonProp             INFO     Distance to Moon: [194148.60244092]
+00:19:10 propulsion.IonProp             INFO     Time in Transit: 2600 hours
+00:19:10 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:10 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:10 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:10 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.0017485] kg/s
+00:19:10 propulsion.IonProp             INFO     Current Delta V: [63.65863737] km/hr
+00:19:10 propulsion.IonProp             INFO     Distance to Moon: [191032.56951869]
+00:19:10 propulsion.IonProp             INFO     Time in Transit: 2650 hours
+00:19:10 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:10 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:10 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:10 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00178863] kg/s
+00:19:10 propulsion.IonProp             INFO     Current Delta V: [65.12065492] km/hr
+00:19:10 propulsion.IonProp             INFO     Distance to Moon: [187910.10313978]
+00:19:10 propulsion.IonProp             INFO     Time in Transit: 2700 hours
+00:19:10 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:10 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:10 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:10 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.0016335] kg/s
+00:19:10 propulsion.IonProp             INFO     Current Delta V: [59.4701794] km/hr
+00:19:10 propulsion.IonProp             INFO     Distance to Moon: [184795.21722504]
+00:19:10 propulsion.IonProp             INFO     Time in Transit: 2750 hours
+00:19:10 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:10 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:10 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:10 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00164528] kg/s
+00:19:10 propulsion.IonProp             INFO     Current Delta V: [59.89923642] km/hr
+00:19:10 propulsion.IonProp             INFO     Distance to Moon: [181681.00124873]
+00:19:10 propulsion.IonProp             INFO     Time in Transit: 2800 hours
+00:19:10 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:10 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:10 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:10 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.0018078] kg/s
+00:19:10 propulsion.IonProp             INFO     Current Delta V: [65.81880036] km/hr
+00:19:10 propulsion.IonProp             INFO     Distance to Moon: [178538.59732265]
+00:19:10 propulsion.IonProp             INFO     Time in Transit: 2850 hours
+00:19:10 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:10 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:10 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:10 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00181288] kg/s
+00:19:10 propulsion.IonProp             INFO     Current Delta V: [66.0036626] km/hr
+00:19:10 propulsion.IonProp             INFO     Distance to Moon: [175402.07342627]
+00:19:10 propulsion.IonProp             INFO     Time in Transit: 2900 hours
+00:19:10 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:10 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:10 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:10 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00174785] kg/s
+00:19:11 propulsion.IonProp             INFO     Current Delta V: [63.63509819] km/hr
+00:19:11 propulsion.IonProp             INFO     Distance to Moon: [172297.94878239]
+00:19:11 propulsion.IonProp             INFO     Time in Transit: 2950 hours
+00:19:11 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:11 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:11 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:11 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00161648] kg/s
+00:19:11 propulsion.IonProp             INFO     Current Delta V: [58.85051209] km/hr
+00:19:11 propulsion.IonProp             INFO     Distance to Moon: [169182.88361273]
+00:19:11 propulsion.IonProp             INFO     Time in Transit: 3000 hours
+00:19:11 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:11 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:11 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:11 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00169959] kg/s
+00:19:11 propulsion.IonProp             INFO     Current Delta V: [61.8773335] km/hr
+00:19:11 propulsion.IonProp             INFO     Distance to Moon: [166077.14150574]
+00:19:11 propulsion.IonProp             INFO     Time in Transit: 3050 hours
+00:19:11 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:11 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:11 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:11 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00179241] kg/s
+00:19:11 propulsion.IonProp             INFO     Current Delta V: [65.25808134] km/hr
+00:19:11 propulsion.IonProp             INFO     Distance to Moon: [162948.98700107]
+00:19:11 propulsion.IonProp             INFO     Time in Transit: 3100 hours
+00:19:11 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:11 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:11 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:11 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00181566] kg/s
+00:19:11 propulsion.IonProp             INFO     Current Delta V: [66.10494457] km/hr
+00:19:11 propulsion.IonProp             INFO     Distance to Moon: [159822.95758644]
+00:19:11 propulsion.IonProp             INFO     Time in Transit: 3150 hours
+00:19:11 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:11 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:11 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:11 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00170826] kg/s
+00:19:11 propulsion.IonProp             INFO     Current Delta V: [62.19308078] km/hr
+00:19:11 propulsion.IonProp             INFO     Distance to Moon: [156710.49902562]
+00:19:11 propulsion.IonProp             INFO     Time in Transit: 3200 hours
+00:19:11 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:11 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:11 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:11 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00171646] kg/s
+00:19:11 propulsion.IonProp             INFO     Current Delta V: [62.49173958] km/hr
+00:19:11 propulsion.IonProp             INFO     Distance to Moon: [153587.44669054]
+00:19:11 propulsion.IonProp             INFO     Time in Transit: 3250 hours
+00:19:11 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:11 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:11 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:11 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00162935] kg/s
+00:19:11 propulsion.IonProp             INFO     Current Delta V: [59.31896977] km/hr
+00:19:12 propulsion.IonProp             INFO     Distance to Moon: [150474.37561839]
+00:19:12 propulsion.IonProp             INFO     Time in Transit: 3300 hours
+00:19:12 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:12 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:12 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:12 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00167016] kg/s
+00:19:12 propulsion.IonProp             INFO     Current Delta V: [60.8056166] km/hr
+00:19:12 propulsion.IonProp             INFO     Distance to Moon: [147342.06401151]
+00:19:12 propulsion.IonProp             INFO     Time in Transit: 3350 hours
+00:19:12 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:12 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:12 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:12 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00167845] kg/s
+00:19:12 propulsion.IonProp             INFO     Current Delta V: [61.10733489] km/hr
+00:19:12 propulsion.IonProp             INFO     Distance to Moon: [144247.25101999]
+00:19:12 propulsion.IonProp             INFO     Time in Transit: 3400 hours
+00:19:12 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:12 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:12 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:12 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00177887] kg/s
+00:19:12 propulsion.IonProp             INFO     Current Delta V: [64.76507828] km/hr
+00:19:12 propulsion.IonProp             INFO     Distance to Moon: [141116.44344076]
+00:19:12 propulsion.IonProp             INFO     Time in Transit: 3450 hours
+00:19:12 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:12 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:12 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:12 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00180996] kg/s
+00:19:12 propulsion.IonProp             INFO     Current Delta V: [65.89743714] km/hr
+00:19:12 propulsion.IonProp             INFO     Distance to Moon: [137971.17598642]
+00:19:12 propulsion.IonProp             INFO     Time in Transit: 3500 hours
+00:19:12 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:12 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:12 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:12 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.0016896] kg/s
+00:19:12 propulsion.IonProp             INFO     Current Delta V: [61.51368569] km/hr
+00:19:12 propulsion.IonProp             INFO     Distance to Moon: [134832.53591703]
+00:19:12 propulsion.IonProp             INFO     Time in Transit: 3550 hours
+00:19:12 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:12 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:12 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:12 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00181283] kg/s
+00:19:12 propulsion.IonProp             INFO     Current Delta V: [66.00199389] km/hr
+00:19:12 propulsion.IonProp             INFO     Distance to Moon: [131717.34270727]
+00:19:12 propulsion.IonProp             INFO     Time in Transit: 3600 hours
+00:19:12 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:12 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:12 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:12 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00175455] kg/s
+00:19:13 propulsion.IonProp             INFO     Current Delta V: [63.87909756] km/hr
+00:19:13 propulsion.IonProp             INFO     Distance to Moon: [128599.06588313]
+00:19:13 propulsion.IonProp             INFO     Time in Transit: 3650 hours
+00:19:13 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:13 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:13 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:13 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00178763] kg/s
+00:19:13 propulsion.IonProp             INFO     Current Delta V: [65.08405582] km/hr
+00:19:13 propulsion.IonProp             INFO     Distance to Moon: [125438.34195605]
+00:19:13 propulsion.IonProp             INFO     Time in Transit: 3700 hours
+00:19:13 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:13 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:13 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:13 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00169504] kg/s
+00:19:13 propulsion.IonProp             INFO     Current Delta V: [61.71158264] km/hr
+00:19:13 propulsion.IonProp             INFO     Distance to Moon: [122306.54635416]
+00:19:13 propulsion.IonProp             INFO     Time in Transit: 3750 hours
+00:19:13 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:13 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:13 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:13 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00181719] kg/s
+00:19:13 propulsion.IonProp             INFO     Current Delta V: [66.16065395] km/hr
+00:19:13 propulsion.IonProp             INFO     Distance to Moon: [119182.94601536]
+00:19:13 propulsion.IonProp             INFO     Time in Transit: 3800 hours
+00:19:13 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:13 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:13 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:13 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00172803] kg/s
+00:19:13 propulsion.IonProp             INFO     Current Delta V: [62.91305932] km/hr
+00:19:13 propulsion.IonProp             INFO     Distance to Moon: [116040.12559575]
+00:19:13 propulsion.IonProp             INFO     Time in Transit: 3850 hours
+00:19:13 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:13 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:13 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:13 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00162958] kg/s
+00:19:13 propulsion.IonProp             INFO     Current Delta V: [59.32754847] km/hr
+00:19:13 propulsion.IonProp             INFO     Distance to Moon: [112917.38976236]
+00:19:13 propulsion.IonProp             INFO     Time in Transit: 3900 hours
+00:19:13 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:13 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:13 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:13 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00172464] kg/s
+00:19:13 propulsion.IonProp             INFO     Current Delta V: [62.78961909] km/hr
+00:19:13 propulsion.IonProp             INFO     Distance to Moon: [109771.87601785]
+00:19:13 propulsion.IonProp             INFO     Time in Transit: 3950 hours
+00:19:13 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:13 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:13 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:13 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00165853] kg/s
+00:19:13 propulsion.IonProp             INFO     Current Delta V: [60.38190823] km/hr
+00:19:14 propulsion.IonProp             INFO     Distance to Moon: [106658.24569684]
+00:19:14 propulsion.IonProp             INFO     Time in Transit: 4000 hours
+00:19:14 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:14 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:14 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:14 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00162964] kg/s
+00:19:14 propulsion.IonProp             INFO     Current Delta V: [59.32966651] km/hr
+00:19:14 propulsion.IonProp             INFO     Distance to Moon: [103534.72205768]
+00:19:14 propulsion.IonProp             INFO     Time in Transit: 4050 hours
+00:19:14 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:14 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:14 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:14 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00178166] kg/s
+00:19:14 propulsion.IonProp             INFO     Current Delta V: [64.86662891] km/hr
+00:19:14 propulsion.IonProp             INFO     Distance to Moon: [100369.57884954]
+00:19:14 propulsion.IonProp             INFO     Time in Transit: 4100 hours
+00:19:14 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:14 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:14 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:14 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00177008] kg/s
+00:19:14 propulsion.IonProp             INFO     Current Delta V: [64.44470403] km/hr
+00:19:14 propulsion.IonProp             INFO     Distance to Moon: [97254.95674181]
+00:19:14 propulsion.IonProp             INFO     Time in Transit: 4150 hours
+00:19:14 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:14 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:14 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:14 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00176113] kg/s
+00:19:14 propulsion.IonProp             INFO     Current Delta V: [64.11887005] km/hr
+00:19:14 propulsion.IonProp             INFO     Distance to Moon: [94152.8862152]
+00:19:14 propulsion.IonProp             INFO     Time in Transit: 4200 hours
+00:19:14 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:14 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:14 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:14 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00176921] kg/s
+00:19:14 propulsion.IonProp             INFO     Current Delta V: [64.41305236] km/hr
+00:19:14 propulsion.IonProp             INFO     Distance to Moon: [90996.87170818]
+00:19:14 propulsion.IonProp             INFO     Time in Transit: 4250 hours
+00:19:14 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:14 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:14 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:14 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.0016158] kg/s
+00:19:14 propulsion.IonProp             INFO     Current Delta V: [58.82562291] km/hr
+00:19:14 propulsion.IonProp             INFO     Distance to Moon: [87852.39425815]
+00:19:14 propulsion.IonProp             INFO     Time in Transit: 4300 hours
+00:19:14 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:14 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:14 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:14 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00180373] kg/s
+00:19:14 propulsion.IonProp             INFO     Current Delta V: [65.6706091] km/hr
+00:19:15 propulsion.IonProp             INFO     Distance to Moon: [84711.23164313]
+00:19:15 propulsion.IonProp             INFO     Time in Transit: 4350 hours
+00:19:15 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:15 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:15 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:15 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00165729] kg/s
+00:19:15 propulsion.IonProp             INFO     Current Delta V: [60.33680258] km/hr
+00:19:15 propulsion.IonProp             INFO     Distance to Moon: [81604.90159782]
+00:19:15 propulsion.IonProp             INFO     Time in Transit: 4400 hours
+00:19:15 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:15 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:15 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:15 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00165482] kg/s
+00:19:15 propulsion.IonProp             INFO     Current Delta V: [60.24687337] km/hr
+00:19:15 propulsion.IonProp             INFO     Distance to Moon: [78452.72425721]
+00:19:15 propulsion.IonProp             INFO     Time in Transit: 4450 hours
+00:19:15 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:15 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:15 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:15 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00177292] kg/s
+00:19:15 propulsion.IonProp             INFO     Current Delta V: [64.54817084] km/hr
+00:19:15 propulsion.IonProp             INFO     Distance to Moon: [75343.09128624]
+00:19:15 propulsion.IonProp             INFO     Time in Transit: 4500 hours
+00:19:15 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:15 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:15 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:15 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00163118] kg/s
+00:19:15 propulsion.IonProp             INFO     Current Delta V: [59.38591167] km/hr
+00:19:15 propulsion.IonProp             INFO     Distance to Moon: [72236.34226772]
+00:19:15 propulsion.IonProp             INFO     Time in Transit: 4550 hours
+00:19:15 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:15 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:15 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:15 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00174565] kg/s
+00:19:15 propulsion.IonProp             INFO     Current Delta V: [63.55507451] km/hr
+00:19:15 propulsion.IonProp             INFO     Distance to Moon: [69095.08705186]
+00:19:15 propulsion.IonProp             INFO     Time in Transit: 4600 hours
+00:19:15 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:15 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:15 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:15 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00178657] kg/s
+00:19:15 propulsion.IonProp             INFO     Current Delta V: [65.0454629] km/hr
+00:19:15 propulsion.IonProp             INFO     Distance to Moon: [65950.96744387]
+00:19:15 propulsion.IonProp             INFO     Time in Transit: 4650 hours
+00:19:15 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:15 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:15 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:15 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00171392] kg/s
+00:19:15 propulsion.IonProp             INFO     Current Delta V: [62.39919508] km/hr
+00:19:16 propulsion.IonProp             INFO     Distance to Moon: [62845.55702342]
+00:19:16 propulsion.IonProp             INFO     Time in Transit: 4700 hours
+00:19:16 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:16 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:16 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:16 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00172865] kg/s
+00:19:16 propulsion.IonProp             INFO     Current Delta V: [62.9357956] km/hr
+00:19:16 propulsion.IonProp             INFO     Distance to Moon: [59718.07783189]
+00:19:16 propulsion.IonProp             INFO     Time in Transit: 4750 hours
+00:19:16 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:16 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:16 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:16 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00174059] kg/s
+00:19:16 propulsion.IonProp             INFO     Current Delta V: [63.37079194] km/hr
+00:19:16 propulsion.IonProp             INFO     Distance to Moon: [56594.14507483]
+00:19:16 propulsion.IonProp             INFO     Time in Transit: 4800 hours
+00:19:16 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:16 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:16 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:16 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00166672] kg/s
+00:19:16 propulsion.IonProp             INFO     Current Delta V: [60.68033099] km/hr
+00:19:16 propulsion.IonProp             INFO     Distance to Moon: [53457.97680196]
+00:19:16 propulsion.IonProp             INFO     Time in Transit: 4850 hours
+00:19:16 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:16 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:16 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:16 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00163326] kg/s
+00:19:16 propulsion.IonProp             INFO     Current Delta V: [59.46150192] km/hr
+00:19:16 propulsion.IonProp             INFO     Distance to Moon: [50301.20179881]
+00:19:16 propulsion.IonProp             INFO     Time in Transit: 4900 hours
+00:19:16 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:16 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:16 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:16 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00172557] kg/s
+00:19:16 propulsion.IonProp             INFO     Current Delta V: [62.82371327] km/hr
+00:19:16 propulsion.IonProp             INFO     Distance to Moon: [47162.47930212]
+00:19:16 propulsion.IonProp             INFO     Time in Transit: 4950 hours
+00:19:16 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:16 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:16 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:16 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00171676] kg/s
+00:19:16 propulsion.IonProp             INFO     Current Delta V: [62.50275181] km/hr
+00:19:16 propulsion.IonProp             INFO     Distance to Moon: [44048.18695586]
+00:19:16 propulsion.IonProp             INFO     Time in Transit: 5000 hours
+00:19:16 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:16 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:16 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:16 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.0017433] kg/s
+00:19:16 propulsion.IonProp             INFO     Current Delta V: [63.46933147] km/hr
+00:19:16 propulsion.IonProp             INFO     Distance to Moon: [40939.22443786]
+00:19:17 propulsion.IonProp             INFO     Time in Transit: 5050 hours
+00:19:17 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:17 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:17 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:17 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00172489] kg/s
+00:19:17 propulsion.IonProp             INFO     Current Delta V: [62.79893133] km/hr
+00:19:17 propulsion.IonProp             INFO     Distance to Moon: [37822.12061912]
+00:19:17 propulsion.IonProp             INFO     Time in Transit: 5100 hours
+00:19:17 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:17 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:17 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:17 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00180113] kg/s
+00:19:17 propulsion.IonProp             INFO     Current Delta V: [65.57587976] km/hr
+00:19:17 propulsion.IonProp             INFO     Distance to Moon: [34676.6401645]
+00:19:17 propulsion.IonProp             INFO     Time in Transit: 5150 hours
+00:19:17 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:17 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:17 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:17 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00172953] kg/s
+00:19:17 propulsion.IonProp             INFO     Current Delta V: [62.96779735] km/hr
+00:19:17 propulsion.IonProp             INFO     Distance to Moon: [31539.85416533]
+00:19:17 propulsion.IonProp             INFO     Time in Transit: 5200 hours
+00:19:17 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:17 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:17 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:17 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00176654] kg/s
+00:19:17 propulsion.IonProp             INFO     Current Delta V: [64.31573842] km/hr
+00:19:17 propulsion.IonProp             INFO     Distance to Moon: [28372.79777328]
+00:19:17 propulsion.IonProp             INFO     Time in Transit: 5250 hours
+00:19:17 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:17 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:17 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:17 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00175505] kg/s
+00:19:17 propulsion.IonProp             INFO     Current Delta V: [63.89725969] km/hr
+00:19:17 propulsion.IonProp             INFO     Distance to Moon: [25249.87030677]
+00:19:17 propulsion.IonProp             INFO     Time in Transit: 5300 hours
+00:19:17 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:17 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:17 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:17 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.0016335] kg/s
+00:19:17 propulsion.IonProp             INFO     Current Delta V: [59.47044197] km/hr
+00:19:17 propulsion.IonProp             INFO     Distance to Moon: [22123.15020416]
+00:19:17 propulsion.IonProp             INFO     Time in Transit: 5350 hours
+00:19:17 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:17 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:17 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:17 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00174775] kg/s
+00:19:17 propulsion.IonProp             INFO     Current Delta V: [63.63136798] km/hr
+00:19:17 propulsion.IonProp             INFO     Distance to Moon: [18986.96966464]
+00:19:17 propulsion.IonProp             INFO     Time in Transit: 5400 hours
+00:19:18 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:18 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:18 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:18 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00177486] kg/s
+00:19:18 propulsion.IonProp             INFO     Current Delta V: [64.61886609] km/hr
+00:19:18 propulsion.IonProp             INFO     Distance to Moon: [15865.58896653]
+00:19:18 propulsion.IonProp             INFO     Time in Transit: 5450 hours
+00:19:18 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:18 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:18 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:18 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00174864] kg/s
+00:19:18 propulsion.IonProp             INFO     Current Delta V: [63.66377656] km/hr
+00:19:18 propulsion.IonProp             INFO     Distance to Moon: [12724.26255347]
+00:19:18 propulsion.IonProp             INFO     Time in Transit: 5500 hours
+00:19:18 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:18 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:18 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:18 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00170421] kg/s
+00:19:18 propulsion.IonProp             INFO     Current Delta V: [62.04555459] km/hr
+00:19:18 propulsion.IonProp             INFO     Distance to Moon: [9591.66570113]
+00:19:18 propulsion.IonProp             INFO     Time in Transit: 5550 hours
+00:19:18 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:18 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:18 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:18 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00166558] kg/s
+00:19:18 propulsion.IonProp             INFO     Current Delta V: [60.63850443] km/hr
+00:19:18 propulsion.IonProp             INFO     Distance to Moon: [6457.70696324]
+00:19:18 propulsion.IonProp             INFO     Time in Transit: 5600 hours
+00:19:18 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:18 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:18 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:18 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.0017443] kg/s
+00:19:18 propulsion.IonProp             INFO     Current Delta V: [63.50581508] km/hr
+00:19:18 propulsion.IonProp             INFO     Distance to Moon: [3311.46766262]
+00:19:18 propulsion.IonProp             INFO     Time in Transit: 5650 hours
+00:19:18 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:18 propulsion.IonProp             INFO     
+------------Ion Propulsion Report------------
+
+00:19:18 propulsion.IonProp             INFO     Power Draw: 12.5
+00:19:18 propulsion.IonProp             INFO     Ionized Mass Flow Rate: [0.00175442] kg/s
+00:19:18 propulsion.IonProp             INFO     Current Delta V: [63.8745724] km/hr
+00:19:18 propulsion.IonProp             INFO     Distance to Moon: [168.49153057]
+00:19:18 propulsion.IonProp             INFO     Time in Transit: 5700 hours
+00:19:18 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:18 propulsion.IonProp             INFO     
+ Arrived at NRHO orbit
+00:19:18 propulsion.IonProp             INFO     
+---------Final Ion Propulsion Report---------
+
+00:19:18 propulsion.IonProp             INFO     Total Power Draw: [71278.79546476] kWh
+00:19:18 propulsion.IonProp             INFO     Total Ionized Mass: [588.10663636] kg/s
+00:19:18 propulsion.IonProp             INFO     Transit Time: [5702.30363718] hours
+00:19:19 propulsion.IonProp             INFO     
+---------------------------------------------
+
+00:19:19 communication.Communications   INFO     Communications powered on
+00:19:19 communication.Communications   INFO     Establishing link...
+00:19:19 communication.Communications   WARNING  Forward signal unstable
+00:19:19 communication.Communications   WARNING  Return signal unstable
+00:19:20 communication.Communications   WARNING  Not connected
+00:19:20 gnc.GNC                        INFO     GNC A powered on
+00:19:20 communication.Communications   INFO     Powered on: True
+00:19:20 communication.Communications   INFO     Power usage: 10W
+00:19:20 communication.Communications   INFO     Stable connection: False
+00:19:20 communication.Communications   INFO     Connected: False
+00:19:20 gnc.GNC                        INFO     Total Power Usage is 0.8 kW
+00:19:20 gnc.GNC                        INFO     CMG Saturation at 0.0 Percent Capacity
+00:19:21 gnc.GNC                        INFO     Total Angular Velocity: 0.0 rad/s
+00:19:21 gnc.GNC                        INFO     Desaturation Maneuvers Performed: 0
+00:19:21 power.Power                    INFO     Power A powered on: True
+00:19:21 power.Power                    INFO     Power usage: 0kWh
+00:19:21 power.Power                    INFO     Generating power: True
+00:19:22 communication.Communications   INFO     Powered on: True
+00:19:22 communication.Communications   INFO     Power usage: 10W
+00:19:22 communication.Communications   INFO     Stable connection: False
+00:19:22 communication.Communications   INFO     Connected: False
+00:19:22 gnc.GNC                        INFO     Total Power Usage is 0.8 kW
+00:19:22 gnc.GNC                        INFO     CMG Saturation at 0.0 Percent Capacity
+00:19:22 gnc.GNC                        INFO     Total Angular Velocity: 0.0 rad/s
+00:19:22 gnc.GNC                        INFO     Desaturation Maneuvers Performed: 0
+00:19:23 power.Power                    INFO     Power A powered on: True
+00:19:23 power.Power                    INFO     Power usage: 0kWh
+00:19:23 power.Power                    INFO     Generating power: True
+>>>>>>> 348bab8d27868516f9300127cf17ae4f600f9814
