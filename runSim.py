@@ -55,15 +55,14 @@ def calculateDistance(subsystems,velocity):
 	return velocity
 
 def main():
-	#detach, check systems,ion prop to orbit, shut off prop
-	#look at threading to wait one second
 	initiateLogger()
 	comms,gnc,power,prop = bootSequence()
 	subsystems = [comms,gnc,power,prop]
 	runReports(subsystems)
 	mission_time=0 #sec
 	velocity = 5
-	random_scenarios = [missionScenarios.visitingVehicle, missionScenarios.eclipse]
+	random_scenarios = [missionScenarios.visitingVehicle, missionScenarios.eclipse(power)]
+
 	while(True):
 		if mission_time%10 == 0:
 			runReports(subsystems)
@@ -80,7 +79,6 @@ def main():
 		power.calculateAvailablePower(subsystems)
 		time.sleep(1)
 		mission_time+=1
-		print('T+',str(mission_time))
 
 		
 

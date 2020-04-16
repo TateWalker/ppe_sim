@@ -18,8 +18,10 @@ def insertionBurn():
 def visitingVehicle():
 	logger.info('Visiting vehicle')
 
-def eclipse():
-	logger.info('Eclipse')
+def eclipse(power):
+	logger.info('Entering eclipse')
+	power.eclipse()
+
 
 def subsystemFail(subsystem):
 	if subsystem.name[-1] == 'A':

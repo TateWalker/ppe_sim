@@ -27,11 +27,10 @@ class IonProp:
         self.main_prop_burn_time = 0.0 # s
         self.mass_flow = 0.0 # kg/s
         self.mass_kg = 0.0 # kg
-        self.power = 0.0 # kW
         self.volts = 0.0 # volts
         self.LifeTimeDeltaVel = 0.0 # m/s
         self.thrust = 0.0 # N
-        self.SetPowerDraw = 40 # change later
+        self.power_usage = 50 #kWh
         self.q = 1.60217663E-19  # charge constant in coulombs
         self.n = 6.0221409E+23  # avocado's numba
         self.cou = 6.241509074E+18  # 1 coulomb
@@ -44,7 +43,6 @@ class IonProp:
     def MainPropOn(self):
         self.powerOn = True
         print('\nIon propulsion on')
-        self.power = 12.5
         self.volts = 300
         print('\nPreparing to fire...')
 
@@ -78,7 +76,7 @@ class IonProp:
     def getReport(self):
         print('\n------------Ion Propulsion Report------------\n')
         print('Power On? {}'.format(self.powerOn))
-        print('Power draw: {}'.format(self.power))
+        print('Power draw: {}'.format(self.power_usage))
         print('Ionized mass flow rate: {} kg/s'.format(self.MassFlow))
         print('Current Delta V: {} km/hr'.format(self.DeltaV))
         print('Thrust: {} mN'.format(self.thrust))
