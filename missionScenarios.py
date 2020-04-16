@@ -4,6 +4,7 @@ logger = logging.getLogger(__name__)
 
 def routine(subsystems):
 	comms,gnc,power,prop = subsystems
+	gnc.CmgWheel()
 	
 
 def eclipse(power):
