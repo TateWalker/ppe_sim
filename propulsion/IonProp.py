@@ -45,9 +45,10 @@ class IonProp:
         print('\nIon propulsion on')
         self.volts = 300
         print('\nPreparing to fire...')
-
-        # if distance to moon < "some tolerance":
-            #self.powerOn = False
+        self.kgIonized()
+        self.FireMainProp()
+        if self.distance >= 356873
+            self.powerOn = False
 
 
     def kgIonized(self):

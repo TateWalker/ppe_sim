@@ -62,6 +62,7 @@ def main():
 	mission_time=0 #sec
 	velocity = 5
 	random_scenarios = [missionScenarios.visitingVehicle, missionScenarios.eclipse(power)]
+	prop.MainPropOn()
 
 	while(True):
 		if mission_time%10 == 0:
