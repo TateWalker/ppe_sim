@@ -17,7 +17,7 @@ class Communications():
 		self.powered_on = False
 		self.power_usage = 0.0
 		self.is_stable = False
-		self.signal_strength_forward = 0.0 #Mbps
+		self.signal_strength_return = 0.0 #Mbps
 		self.connected = False
 		self.distance = 0.0 #km
 		self.f_stable = False

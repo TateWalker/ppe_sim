@@ -8,6 +8,7 @@ import time
 import logging
 import sys
 import missionScenarios
+import pandas as pd
 
 def initiateLogger():
 		# set up logging to file - see previous section for more details
@@ -48,12 +49,12 @@ def calculateDistance(subsystems,new_distance): #do linspace instead
 
 def main():
 	initiateLogger()
+	output_data = pd.DataFrame(columns=['GNC Saturation %','Data Rate','Power Generation Rate','Delta Velocity','Time'])
 	comms,gnc,power,prop = bootSequence()
 	subsystems = [comms,gnc,power]
 	runReports(subsystems)
 	mission_time=0 #hrs
 	distances = np.linspace(356873,426452,22)
-
 	i = 0
 
 	while(True):
@@ -69,12 +70,14 @@ def main():
 			missionScenarios.eclipse(power,subsystems)
 		new_distance = distances[i]
 		calculateDistance(subsystems,new_distance)
+		output_data = output_data.append({'GNC Saturation %': gnc.saturation, 'Data Rate': comms.signal_strength_return, 'Power Generation Rate': power.generation_rate})
 		time.sleep(1)
 		mission_time+=6
 		if mission_time==132:
 			break
 		else:
 			i+=1
+
 
 	comms.getFinalReport()
 		

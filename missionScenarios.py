@@ -7,6 +7,7 @@ def routine(subsystems):
 	gnc.CmgWheel() # this does not seem to be called 
 	comms.getSignalStrength()
 	power.calculateAvailablePower(subsystems)
+
 	
 
 def eclipse(power,subsystems):

@@ -18,11 +18,11 @@ class Power():
 	# def getBattery():
 
 	def getReport(self):
-		print('\n-------Power-------\n')
+		logger.info('\n-------Power-------\n')
 		logger.info('{} powered on: {}'.format(self.name, self.powered_on))
 		logger.info('Power Available: {:3.3f}kWh'.format(self.available_power))
 		logger.info('Generating power: {}'.format(self.generating_power))
-		print('\n----------------------------\n')
+		logger.info('\n----------------------------\n')
 
 	#setters
 
