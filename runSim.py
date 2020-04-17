@@ -30,10 +30,10 @@ def bootSequence():
 	gnc = GNC()
 	power = Power()
 	prop = IonProp()
+	prop_df = pd.DataFrame({'Distance': prop.distance_arr,'Delta V':prop.Delta_V_arr})
 
 	power.powerOn()
 	prop.MainPropOn()
-	#gnc.CmgWheel() for debugging
 	comms.powerOn()
 	gnc.powerOn()
 	

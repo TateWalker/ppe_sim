@@ -35,6 +35,7 @@ class IonProp:
         self.distance = 0
         self.hours = 0
         self.mass_used = 0
+        self.Delta_V_arr = []
 
 
 
@@ -81,6 +82,7 @@ class IonProp:
         self.LifeTimeDeltaVel = VelOut*log(massInit/(massInit - 2000)) # is my notation correct here?    units: m/s
         self.thrust = MolMass * self.massPro * VelOut * ((self.power * 1000) / self.volts) * self.cou  # Newtons  we may not need this values
         self.distance += self.DeltaV
+        self.Delta_V_arr.append(self.DeltaV)
         self.hours = self.hours + 1
 
 

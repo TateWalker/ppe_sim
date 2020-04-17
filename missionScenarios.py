@@ -4,7 +4,8 @@ logger = logging.getLogger(__name__)
 
 def routine(subsystems):
 	comms,gnc,power = subsystems
-	gnc.CmgWheel() # this does not seem to be called 
+	gnc.CmgWheel()
+	gnc.sat_percent
 	comms.getSignalStrength()
 	power.calculateAvailablePower(subsystems)
 
