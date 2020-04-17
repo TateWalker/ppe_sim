@@ -55,6 +55,10 @@ class GNC:
         self.mass_ship = 7478 # kg
         self.MomDiag = [25164.12, 30167.7, 43857.90] # Ixx, Iyy, Izz format
         self.desat_arr = []
+        self.saturation = 0
+        self.sat_percent = 0
+        
+        
                
 
 
@@ -179,8 +183,11 @@ class GNC:
                 self.omega_vec[i] = self.omega_vec[i] + self.base_slew_rate # add an average slew rate each second
                 self.omega_vec[i] = self.omega_vec[i] + self.rand_vec[i] # add a random perturbation each second
                 self.lin_mom_vec[i] = self.MomDiag[i]*self.omega_vec[i]
-            if np.linalg.norm(self.lin_mom_vec) > self.mom_capacity:
+            self.saturation = np.linalg.norm(self.lin_mom_vec)
+            self.sat_percent = self.saturation / self.mom_capacity
+            if self.saturation > self.mom_capacity:
                 self.DesatOMM()
+            
 
 # getters
 

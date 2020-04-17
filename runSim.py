@@ -29,10 +29,10 @@ def bootSequence():
 	gnc = GNC()
 	power = Power()
 	prop = IonProp()
+	prop.Delta_V_arr
 
 	power.powerOn()
 	prop.MainPropOn()
-	#gnc.CmgWheel() for debugging
 	comms.powerOn()
 	gnc.powerOn()
 	
