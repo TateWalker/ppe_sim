@@ -79,7 +79,7 @@ class IonProp:
 
         VelOut = pow((2 * self.volts * self.q) / self.massKg, 0.5) # m/s
         massInit = 7478  # initial mass of PPE in kg
-        self.DeltaV = ((VelOut/1000)*3600)*log(massInit/(massInit - (self.MassFlow*3600))) # assumed for 1 second
+        self.DeltaV = (((VelOut/1000)*3600)*log(massInit/(massInit - (self.MassFlow*3600))))[0] # assumed for 1 second
         self.LifeTimeDeltaVel = VelOut*log(massInit/(massInit - 2000)) # is my notation correct here?    units: m/s
         self.thrust = MolMass * self.massPro * VelOut * ((self.power * 1000) / self.volts) * self.cou  # Newtons  we may not need this values
         self.distance += self.DeltaV
