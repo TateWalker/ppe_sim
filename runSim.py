@@ -16,7 +16,7 @@ def initiateLogger():
 	logging.basicConfig(level=logging.INFO,
 	                    format='%(asctime)s %(name)-30s %(levelname)-8s %(message)s',
 	                    datefmt='%H:%M:%S',
-	                    filename='logs/ppe.log',
+	                    #filename='logs/ppe.log',
 	                    filemode='w')
 	logging.info('Logger initiated')
 	console = logging.StreamHandler()
