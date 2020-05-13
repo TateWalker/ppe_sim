@@ -16,9 +16,9 @@ def eclipse(power,subsystems):
 	power.eclipse(subsystems)
 
 	
+	#asdfadjlkf 
 	
-	
-	
+	# asdkfljasdlf;jas 
 	# asdlfjaslkdjfalksdf a
 def subsystemFail(subsystem):
 	if subsystem.name[-1] == 'A':
