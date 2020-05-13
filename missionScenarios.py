@@ -28,3 +28,4 @@ def subsystemFail(subsystem):
 	logger.warning('{} failed! {} has taken over.'.format(subsystem.name,new_name))
 	subsystem.name = new_name
 	subsystem.powerOn()
+
