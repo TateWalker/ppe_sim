@@ -15,6 +15,11 @@ def eclipse(power,subsystems):
 	logger.info('Entering eclipse')
 	power.eclipse(subsystems)
 
+	
+	
+	
+	
+	# asdlfjaslkdjfalksdf a
 def subsystemFail(subsystem):
 	if subsystem.name[-1] == 'A':
 		new_name = subsystem.name[0:-1]+'B'
