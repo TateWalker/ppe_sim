@@ -15,11 +15,7 @@ def eclipse(power,subsystems):
 	logger.info('Entering eclipse')
 	power.eclipse(subsystems)
 
-	
-	#asdfadjlkf 
-	
-	# asdkfljasdlf;jas 
-	# asdlfjaslkdjfalksdf a
+
 def subsystemFail(subsystem):
 	if subsystem.name[-1] == 'A':
 		new_name = subsystem.name[0:-1]+'B'
@@ -29,10 +25,6 @@ def subsystemFail(subsystem):
 		logger.critical('Critical malfunction! All {} computers are down!'.format(subsystem.name[0:-2]))
 		exit()
 
-
-		
 	logger.warning('{} failed! {} has taken over.'.format(subsystem.name,new_name))
 	subsystem.name = new_name
 	subsystem.powerOn()
-
-	# alkdsfjaslkdjf lak
