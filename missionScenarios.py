@@ -24,5 +24,8 @@ def subsystemFail(subsystem):
 		logger.critical('Critical malfunction! All {} computers are down!'.format(subsystem.name[0:-2]))
 		exit()
 	logger.warning('{} failed! {} has taken over.'.format(subsystem.name,new_name))
+	
+	
+	
 	subsystem.name = new_name
 	subsystem.powerOn()
